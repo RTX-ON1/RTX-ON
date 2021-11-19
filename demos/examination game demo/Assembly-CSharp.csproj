@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\RoomGenerator.cs" />
+    <Compile Include="Assets\Scripts\Room.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

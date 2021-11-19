@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 100
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -215,6 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 740076993}
+  - component: {fileID: 740076994}
   m_Layer: 0
   m_Name: RoomGenerator
   m_TagString: Untagged
@@ -237,6 +238,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &740076994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740076992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d455dd2c6c25947999922f8bb17a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 0
+  roomPrefab: {fileID: 6679568689307290095, guid: b00c1a6e645434b4d99afb02a103ee50, type: 3}
+  roomNumber: 10
+  startColor: {r: 0.37647063, g: 1, b: 0.027450982, a: 1}
+  endColor: {r: 0.909804, g: 0, b: 0.003921569, a: 1}
+  generatorPoint: {fileID: 1307434644}
+  xOffset: 18
+  yOffset: 9
+  roomLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  maxStep: 0
+  rooms: []
+  wallType:
+    wallL: {fileID: 4839847175888830086, guid: d7bc363e03f28944eaff758e416a6ec6, type: 3}
+    wallR: {fileID: 4839847175888830086, guid: 753d8e21cedeee24dafe00e95d501ea3, type: 3}
+    wallU: {fileID: 4839847175888830086, guid: 187211f54baec544b85fdf2ae1bed09c, type: 3}
+    wallD: {fileID: 4839847175888830086, guid: d6bca85e08160a9449ad04bae73a5bca, type: 3}
+    wallUD: {fileID: 4839847175888830086, guid: c152f3ebf08818e4eb2545d250d490b6, type: 3}
+    wallUL: {fileID: 4839847175888830086, guid: 743dcce3dbd6b2b44bc5d645c8177bff, type: 3}
+    wallUR: {fileID: 4839847175888830086, guid: 08e3829f761f7aa4e9746028aa30ac4c, type: 3}
+    wallLR: {fileID: 4839847175888830086, guid: 90b3dbfff0042cd4594879436e794f97, type: 3}
+    wallDL: {fileID: 4839847175888830086, guid: 1e55593234fd9c2448bf87b9ad6ff495, type: 3}
+    wallDR: {fileID: 4839847175888830086, guid: 0957af44d11b79a428e7bff7e8a348fa, type: 3}
+    wallUDL: {fileID: 4839847175888830086, guid: 1d5efeb22dd558448ac1449f0fb02b16, type: 3}
+    wallUDR: {fileID: 4839847175888830086, guid: b69b1cf479366a2498569d1784970c2b, type: 3}
+    wallULR: {fileID: 4839847175888830086, guid: dfe56c8896c17654a9ffa9195055fd98, type: 3}
+    wallDLR: {fileID: 4839847175888830086, guid: aee86ca4067000349b8a4744c4672e56, type: 3}
+    wallUDLR: {fileID: 4839847175888830086, guid: a7761f56e4bc9dc4a8a638ec3740c76b, type: 3}
 --- !u!1 &1307434643
 GameObject:
   m_ObjectHideFlags: 0

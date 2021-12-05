@@ -54,6 +54,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainStage.cs" />
+    <Compile Include="Assets\Scripts\GlobalControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

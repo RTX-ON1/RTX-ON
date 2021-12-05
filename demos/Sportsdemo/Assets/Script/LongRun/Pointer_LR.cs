@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pointer : MonoBehaviour
+public class Pointer_LR : MonoBehaviour
 {
     // Start is called before the first frame update
     public Vector3 startpos;
     public GameObject center;
-    public int degreesPersecond = 30;
+    public int degreesPersecond = 45;
+    public static float score = 0.0f;
     void Start()
     {
         // Debug.Log(degreesPersecond);
@@ -30,6 +31,6 @@ public class Pointer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("OnTriggerStay");
+        score += Time.deltaTime;
     }
 }

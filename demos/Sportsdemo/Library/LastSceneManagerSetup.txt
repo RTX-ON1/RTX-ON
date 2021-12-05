@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/LongRun.unity
+- path: Assets/Scenes/ShoutRun.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

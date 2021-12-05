@@ -2,26 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target_PS : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float r = 1.32f;
-    private float angle;
+    float angle;
+    float r = 1.32f;
     public GameObject center;
     Vector3 targetposition;
+    float pi = Mathf.PI;
     void Start()
     {
-        // Debug.Log(r);
-        angle = Random.Range(Mathf.PI,2*Mathf.PI);
-        Debug.Log(angle);
+        angle = Random.Range(-pi/2,pi/2);
         targetposition = new Vector3(center.transform.position.x + r * Mathf.Cos(angle),center.transform.position.y + r * Mathf.Sin(angle), center.transform.position.z);
-        Debug.Log("targetposition:"+targetposition+"COS:"+Mathf.Cos(angle)+"SIN:"+Mathf.Sin(angle));
         transform.position = targetposition;
-        // Debug.Log(transform.position);
     }
 
     // Update is called once per frame
-
     void Update()
     {
         

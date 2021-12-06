@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class MainStage : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class MainStage : MonoBehaviour
     public GameObject DateText;
     public GameObject ActText;
     public GameObject StudyText;
+    public GameObject MapPanel;
+    public GameObject EventPanel;
+    public TextAsset EventsData;
+    public string[] Events;
+    public int EventNum;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +22,7 @@ public class MainStage : MonoBehaviour
         setDateText();
         setActText();
         setStudyText();
+        LoadEvents();
     }
 
     // Update is called once per frame
@@ -42,7 +49,7 @@ public class MainStage : MonoBehaviour
     {
 
         Text txt = ActText.GetComponent<Text>();
-        txt.text = "社团：\n\t飞机社：" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t吉他社：" + GlobalControl.Instance.JitaClubScore.ToString() + "\n社交：\n\t李浩民：" + GlobalControl.Instance.LHMScore.ToString();
+        txt.text = "社团：\n\t飞机社：" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t吉他社：" + GlobalControl.Instance.JitaClubScore.ToString() + "\n社交：\n\t李浩民：" + GlobalControl.Instance.SocialScore.ToString();
         
     }
 
@@ -50,11 +57,81 @@ public class MainStage : MonoBehaviour
     {
 
         Text txt = StudyText.GetComponent<Text>();
-        txt.text = "学习：\n\t数学：" + GlobalControl.Instance.MathScore.ToString() + "\n\t编程：" + GlobalControl.Instance.ComputerScore.ToString() + "\n\t会计：" + GlobalControl.Instance.FinanceScore.ToString();
+        txt.text = "学习：\n\t分数：" + GlobalControl.Instance.LearningScore.ToString() + "\n\t次数：" + GlobalControl.Instance.LearnTime.ToString() + "\n体育：\n\t体质：" + GlobalControl.Instance.SportsScore.ToString();
 
     }
 
     public void onclickMap()
+    {
+        MapPanel.SetActive(true);
+    }
+
+    public void onclickSprots()
+    {
+
+    }
+
+    public void onclickLearn()
+    {
+
+    }
+
+    public void onclickClub()
+    {
+
+    }
+
+    public void onclickSocial()
+    {
+
+    }
+
+    public void onclickCloseMap()
+    {
+        MapPanel.SetActive(false);
+    }
+
+    public void randomEvent(int ToDo, int Done)
+    {
+        int i = EventNum/2;
+        while (i > 0)
+        {
+            int E = Random.Range(0, EventNum - 1);
+            string[] EventItem = Events[E].Split(',');
+            if(GlobalControl.Instance.LearningScore > double.Parse(EventItem[1]) && GlobalControl.Instance.LearningScore < double.Parse(EventItem[2])
+                && GlobalControl.Instance.LearnTime > double.Parse(EventItem[3]) && GlobalControl.Instance.LearnTime < double.Parse(EventItem[4])
+                && GlobalControl.Instance.SportsScore > double.Parse(EventItem[5]) && GlobalControl.Instance.SportsScore < double.Parse(EventItem[6])
+                && GlobalControl.Instance.SportsTime > double.Parse(EventItem[7]) && GlobalControl.Instance.SportsTime < double.Parse(EventItem[8])
+                && GlobalControl.Instance.FeijiClubScore > double.Parse(EventItem[9]) && GlobalControl.Instance.FeijiClubScore < double.Parse(EventItem[10])
+                && GlobalControl.Instance.ClubTime > double.Parse(EventItem[11]) && GlobalControl.Instance.ClubTime < double.Parse(EventItem[12])
+                && GlobalControl.Instance.SocialScore > double.Parse(EventItem[13]) && GlobalControl.Instance.SocialScore < double.Parse(EventItem[14])
+                && GlobalControl.Instance.SocialTime > double.Parse(EventItem[15]) && GlobalControl.Instance.SocialTime < double.Parse(EventItem[16])
+                && !(isBeginningOfTerm() == 0 && double.Parse(EventItem[17]) == 1) && !(isEndOfTerm() == 0 && double.Parse(EventItem[18]) == 1)
+                && (double.Parse(EventItem[19]) == 0 || ToDo == double.Parse(EventItem[19])) && (double.Parse(EventItem[20]) == 0 || Done == double.Parse(EventItem[20])))
+            {
+                EventHappen(int.Parse(EventItem[0]));
+            }
+        }
+
+    }
+
+    public void LoadEvents()
+    {
+        Events = EventsData.text.Split('\n');
+        EventNum = Events.Length;
+    }
+
+    public int isBeginningOfTerm()
+    {
+        return 1;
+    }
+
+    public int isEndOfTerm()
+    {
+        return 1;
+    }
+
+    public void EventHappen(int ID)
     {
 
     }

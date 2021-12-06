@@ -12,10 +12,13 @@ public class GlobalControl : MonoBehaviour
     public string ddl;
     public int FeijiClubScore;
     public int JitaClubScore;
-    public int LHMScore;
-    public int MathScore;
-    public int ComputerScore;
-    public int FinanceScore;
+    public int SocialScore;
+    public int LearningScore;
+    public int SportsScore;
+    public int ClubTime;
+    public int LearnTime;
+    public int SocialTime;
+    public int SportsTime;
 
     //≥ı ºªØ
     private void Awake()

@@ -133,7 +133,7 @@ public class MainStage : MonoBehaviour
 
     public void EventHappen(int ID)
     {
-
+        EventPanel.SetActive(true);
     }
 
 }

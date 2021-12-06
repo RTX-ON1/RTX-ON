@@ -1864,11 +1864,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9770963a2e04e47831156d14978738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generation: 0
+  stage: 0
   date: "12\u67085\u65E5"
   ddl: 
   FeijiClubScore: 0
   JitaClubScore: 0
-  LHMScore: 0
+  SocialScore: 0
   LearningScore: 0
   SportsScore: 0
   ClubTime: 0

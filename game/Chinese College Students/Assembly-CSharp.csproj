@@ -56,8 +56,13 @@
     <Compile Include="Assets\Scripts\GlobalControl.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MainStage.cs" />
-    <Compile Include="Assets\Scripts\Save.cs" />
     <Compile Include="Assets\Scripts\SaveGame.cs" />
+    <Compile Include="Assets\Scripts\Save.cs" />
+    <Compile Include="Assets\Scripts\WallMap.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Room.cs" />
+    <Compile Include="Assets\Scripts\RoomGenerator.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

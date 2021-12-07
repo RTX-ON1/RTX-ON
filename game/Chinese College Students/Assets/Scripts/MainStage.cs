@@ -1,3 +1,5 @@
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,12 +30,40 @@ public class MainStage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DateTime dt = Convert.ToDateTime(GlobalControl.Instance.date);
+        int year = dt.Year;
+        int month = dt.Month;
+        int day = dt.Day;
+        if (month == 6 && day == 30)
+        {
+            month = 9; day = 1;
+        }
+        else
+        {
+            if (month == 12 && day == 30)
+            {
+                year += 1; month = 3; day = 1;
+            }
+            else
+            {
+                dt = dt.AddDays(15);
+                month = dt.Month;
+                day = dt.Day;
+            }
+        }
+        GlobalControl.Instance.date = year + "年" + month + "月" + day + "日";
+        Text txt = DateText.GetComponent<Text>();
+        txt.text = GlobalControl.Instance.date + "\n距离ddl还有\n" + theDay2DDL();
+
+
+
+
     }
 
     public void setDateText()
     {
 
+        GlobalControl.Instance.date = "2019年9月1日";
         Text txt = DateText.GetComponent<Text>();
         txt.text = GlobalControl.Instance.date + "\n距离ddl还有\n" + theDay2DDL();
 
@@ -41,7 +71,18 @@ public class MainStage : MonoBehaviour
 
     public string theDay2DDL()
     {
-        string day = "0天";
+        DateTime dt = Convert.ToDateTime(GlobalControl.Instance.date);
+        if (dt.DayOfYear < 181)
+        {
+            int day_span = 180 - dt.DayOfYear;
+        }
+        else
+        {
+            day_span = 365 - dt.DayOfYear;
+        }
+
+        string day = day_span.ToString() + "天" ;
+
         return day;
     }
 

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Stage.unity
     guid: 90893d17c29ac7540835b60fea1808f7
+  - enabled: 1
+    path: Assets/Scenes/Examination.unity
+    guid: ae76d2ff6ec65cb4c982a07b0ddd28c7
   m_configObjects: {}

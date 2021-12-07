@@ -30,42 +30,15 @@ public class MainStage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DateTime dt = Convert.ToDateTime(GlobalControl.Instance.date);
-        int year = dt.Year;
-        int month = dt.Month;
-        int day = dt.Day;
-        if (month == 6 && day == 30)
-        {
-            month = 9; day = 1;
-        }
-        else
-        {
-            if (month == 12 && day == 30)
-            {
-                year += 1; month = 3; day = 1;
-            }
-            else
-            {
-                dt = dt.AddDays(15);
-                month = dt.Month;
-                day = dt.Day;
-            }
-        }
-        GlobalControl.Instance.date = year + "��" + month + "��" + day + "��";
-        Text txt = DateText.GetComponent<Text>();
-        txt.text = GlobalControl.Instance.date + "\n����ddl����\n" + theDay2DDL();
-
-
-
-
+        
     }
 
     public void setDateText()
     {
 
-        GlobalControl.Instance.date = "2019��9��1��";
+        GlobalControl.Instance.date = "2019/09/01";
         Text txt = DateText.GetComponent<Text>();
-        txt.text = GlobalControl.Instance.date + "\n����ddl����\n" + theDay2DDL();
+        txt.text = GlobalControl.Instance.date + "\n距离ddl还有\n" + theDay2DDL();
 
     }
 
@@ -82,7 +55,7 @@ public class MainStage : MonoBehaviour
             day_span = 365 - dt.DayOfYear;
         }
 
-        string day = day_span.ToString() + "��" ;
+        string day = day_span.ToString() + "天" ;
 
         return day;
     }
@@ -91,7 +64,7 @@ public class MainStage : MonoBehaviour
     {
 
         Text txt = ActText.GetComponent<Text>();
-        txt.text = "���ţ�\n\t�ɻ��磺" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t�����磺" + GlobalControl.Instance.JitaClubScore.ToString() + "\n�罻��\n\t�����" + GlobalControl.Instance.SocialScore.ToString();
+        txt.text = "社团：\n\t动漫社：" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t吉他社：" + GlobalControl.Instance.JitaClubScore.ToString() + "\n社交：\n\t李浩民：" + GlobalControl.Instance.SocialScore.ToString();
         
     }
 
@@ -99,7 +72,7 @@ public class MainStage : MonoBehaviour
     {
 
         Text txt = StudyText.GetComponent<Text>();
-        txt.text = "ѧϰ��\n\t������" + GlobalControl.Instance.LearningScore.ToString() + "\n\t������" + GlobalControl.Instance.LearnTime.ToString() + "\n������\n\t���ʣ�" + GlobalControl.Instance.SportsScore.ToString();
+        txt.text = "学习：\n\t分数：" + GlobalControl.Instance.LearningScore.ToString() + "\n\t时间：" + GlobalControl.Instance.LearnTime.ToString() + "\n体育：\n\t分数：" + GlobalControl.Instance.SportsScore.ToString();
 
     }
 

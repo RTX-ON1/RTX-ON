@@ -1,0 +1,2 @@
+C:\Users\LYQ\Documents\GitHub\RTX-ON\game\Chinese College Students\obj\Debug\Assembly-CSharp.csproj.AssemblyReference.cache
+C:\Users\LYQ\Documents\GitHub\RTX-ON\game\Chinese College Students\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

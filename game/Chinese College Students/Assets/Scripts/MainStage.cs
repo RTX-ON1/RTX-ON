@@ -1,3 +1,5 @@
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,20 +30,60 @@ public class MainStage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DateTime dt = Convert.ToDateTime(GlobalControl.Instance.date);
+        int year = dt.Year;
+        int month = dt.Month;
+        int day = dt.Day;
+        if (month == 6 && day == 30)
+        {
+            month = 9; day = 1;
+        }
+        else
+        {
+            if (month == 12 && day == 30)
+            {
+                year += 1; month = 3; day = 1;
+            }
+            else
+            {
+                dt = dt.AddDays(15);
+                month = dt.Month;
+                day = dt.Day;
+            }
+        }
+        GlobalControl.Instance.date = year + "ï¿½ï¿½" + month + "ï¿½ï¿½" + day + "ï¿½ï¿½";
+        Text txt = DateText.GetComponent<Text>();
+        txt.text = GlobalControl.Instance.date + "\nï¿½ï¿½ï¿½ï¿½ddlï¿½ï¿½ï¿½ï¿½\n" + theDay2DDL();
+
+
+
+
     }
 
     public void setDateText()
     {
 
+        GlobalControl.Instance.date = "2019ï¿½ï¿½9ï¿½ï¿½1ï¿½ï¿½";
         Text txt = DateText.GetComponent<Text>();
-        txt.text = GlobalControl.Instance.date + "\n¾àÀëddl»¹ÓÐ\n" + theDay2DDL();
+        txt.text = GlobalControl.Instance.date + "\nï¿½ï¿½ï¿½ï¿½ddlï¿½ï¿½ï¿½ï¿½\n" + theDay2DDL();
 
     }
 
     public string theDay2DDL()
     {
-        string day = "0Ìì";
+        DateTime dt = Convert.ToDateTime(GlobalControl.Instance.date);
+        int day_span;
+        if (dt.DayOfYear < 181)
+        {
+            day_span = 180 - dt.DayOfYear;
+        }
+        else
+        {
+            day_span = 365 - dt.DayOfYear;
+        }
+
+        string day = day_span.ToString() + "ï¿½ï¿½" ;
+
         return day;
     }
 
@@ -49,7 +91,7 @@ public class MainStage : MonoBehaviour
     {
 
         Text txt = ActText.GetComponent<Text>();
-        txt.text = "ÉçÍÅ£º\n\t·É»úÉç£º" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t¼ªËûÉç£º" + GlobalControl.Instance.JitaClubScore.ToString() + "\nÉç½»£º\n\tÀîºÆÃñ£º" + GlobalControl.Instance.SocialScore.ToString();
+        txt.text = "ï¿½ï¿½ï¿½Å£ï¿½\n\tï¿½É»ï¿½ï¿½ç£º" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\tï¿½ï¿½ï¿½ï¿½ï¿½ç£º" + GlobalControl.Instance.JitaClubScore.ToString() + "\nï¿½ç½»ï¿½ï¿½\n\tï¿½ï¿½ï¿½ï¿½ï¿½" + GlobalControl.Instance.SocialScore.ToString();
         
     }
 
@@ -57,7 +99,7 @@ public class MainStage : MonoBehaviour
     {
 
         Text txt = StudyText.GetComponent<Text>();
-        txt.text = "Ñ§Ï°£º\n\t·ÖÊý£º" + GlobalControl.Instance.LearningScore.ToString() + "\n\t´ÎÊý£º" + GlobalControl.Instance.LearnTime.ToString() + "\nÌåÓý£º\n\tÌåÖÊ£º" + GlobalControl.Instance.SportsScore.ToString();
+        txt.text = "Ñ§Ï°ï¿½ï¿½\n\tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + GlobalControl.Instance.LearningScore.ToString() + "\n\tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + GlobalControl.Instance.LearnTime.ToString() + "\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n\tï¿½ï¿½ï¿½Ê£ï¿½" + GlobalControl.Instance.SportsScore.ToString();
 
     }
 

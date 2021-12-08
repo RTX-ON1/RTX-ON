@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Control : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Control : MonoBehaviour
     public GameObject right;
     public Text leftcount;
     int flag;
-    int count = 100;
+    int count = 20;
     void Start()
     {
         flag = Random.Range(0,2);
@@ -43,5 +44,21 @@ public class Control : MonoBehaviour
             } 
         }
         leftcount.text = "" + count;
+
+        //游戏结束条件
+        if(count == 0)
+        {
+            flag = -1;
+            left.SetActive(false);
+            right.SetActive(false);
+            Debug.Log("GameOver");
+            Invoke("ExitGame",3f);
+        }
+    }
+
+    private void ExitGame()
+    {
+        SceneManager.LoadScene("Main Stage");
+
     }
 }

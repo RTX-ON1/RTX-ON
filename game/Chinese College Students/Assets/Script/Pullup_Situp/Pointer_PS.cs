@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Pointer_PS : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class Pointer_PS : MonoBehaviour
     public GameObject target;
     public Text scoreText;
     public GameObject EndText;
-    int degreesPersecond = 60;  //初始速度
-    int addspeed = 20;   //加速度
+    int degreesPersecond = 80;  //初始速度
+    int addspeed = 10;   //加速度
     int score = 0;  //得分
     Vector3 rotatedtc = Vector3.back;  //旋转方向
     bool RotateDic = true;  //判断旋转方向
@@ -19,8 +20,6 @@ public class Pointer_PS : MonoBehaviour
     float angle;    //目标生成角度
     float pi = Mathf.PI;
     float r = 1.31f;
-    float starttime = 0;
-    float nexttime = 0.35f;
     
     void Start()
     {
@@ -39,16 +38,18 @@ public class Pointer_PS : MonoBehaviour
             transform.RotateAround(center.transform.position, -rotatedtc, degreesPersecond * Time.deltaTime);
         }
 
-        if(Time.time >=starttime)
-        {
-            // Debug.Log(ifontarget);
-            starttime += nexttime;
-
-            if(!ifontarget && Input.GetKey("space"))
+        //游戏结束条件
+        if(!ifontarget && Input.GetKeyDown("space"))
             {
                 EndText.SetActive(true);
+                degreesPersecond = 0;
+                Invoke("ExitGame",3f);
             }
-        }
+
+    }
+    private void ExitGame()
+    {
+        SceneManager.LoadScene("Main Stage");
 
     }
     private void OnTriggerStay(Collider other)
@@ -71,7 +72,7 @@ public class Pointer_PS : MonoBehaviour
                 score++;
             }
         }
-        scoreText.text = "分数：" + score + "分";
+        scoreText.text = score.ToString();
     }
 
     private void OnTriggerExit(Collider other)

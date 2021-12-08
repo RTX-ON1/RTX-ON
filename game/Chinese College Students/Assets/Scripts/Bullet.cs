@@ -85,7 +85,12 @@ public class Bullet : MonoBehaviour
                     Destroy(collision.gameObject);
                 }
                 break;
-
+            
+            case"SpecialAirBarriar":
+                collision.SendMessage("changeVisible");
+                Destroy(gameObject);
+                break;
+                
             default:
             break;
         }

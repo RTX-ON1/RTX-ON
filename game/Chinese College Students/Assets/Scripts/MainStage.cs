@@ -123,7 +123,7 @@ public class MainStage : MonoBehaviour
 
     public void onclickSocial()
     {
-
+        SceneManager.LoadScene("tankwar");
     }
 
     public void onclickCloseMap()

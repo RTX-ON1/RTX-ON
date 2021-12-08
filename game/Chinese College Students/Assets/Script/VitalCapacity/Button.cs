@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Button : MonoBehaviour
     int addscore;
     float deltatime;    //检测时间间隔
     float timerate = 0.05f;
+    float gameTime = 10;
     void Start()
     {
         deltatime = 0;
@@ -19,6 +21,17 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameTime -= Time.deltaTime;
+        
+        //游戏结束条件
+        if(gameTime<=0)
+        {
+            gameTime = 0;
+            Debug.Log("GameOver");
+            deltatime = 9999;
+            Invoke("ExitGame",3f);
+        }
+
         if(Time.time >= deltatime)
         {
             if(Input.GetKey("space"))
@@ -31,5 +44,11 @@ public class Button : MonoBehaviour
         }
 
         scoreText.text = ""+score;
+    }
+
+    private void ExitGame()
+    {
+        SceneManager.LoadScene("Main Stage");
+
     }
 }

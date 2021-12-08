@@ -737,12 +737,13 @@ public class LearningGameManager : MonoBehaviour
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene(1);
+        GlobalControl.Instance.LearningScore = playerScore;
+        SceneManager.LoadScene("Main Stage");
     }
 
     public void Replay()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Learning Game");
     }
 
     //清除行的方法

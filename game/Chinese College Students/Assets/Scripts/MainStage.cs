@@ -121,12 +121,12 @@ public class MainStage : MonoBehaviour
 
     public void onclickLearn()
     {
-
+        SceneManager.LoadScene("Learning Game");
     }
 
     public void onclickClub()
     {
-        SceneManager.LoadScene("Learning Game");
+        SceneManager.LoadScene("Plane Fight");
     }
 
     public void onclickSocial()

@@ -101,7 +101,9 @@ public class MainStage : MonoBehaviour
 
     public void onclickMenu()
     {
-        MenuPanel.SetActive(true);
+        if(MenuPanel.activeSelf == true)
+            MenuPanel.SetActive(false);
+        else MenuPanel.SetActive(true);
     }
 
     public void onclickSprots()
@@ -196,6 +198,11 @@ public class MainStage : MonoBehaviour
         setDateText();
         setActText();
         setStudyText();
+    }
+
+    public void FinalExam()
+    {
+        SceneManager.LoadScene("Examination");
     }
 
 }

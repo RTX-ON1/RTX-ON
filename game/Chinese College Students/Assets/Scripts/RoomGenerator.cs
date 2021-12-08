@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RoomGenerator : MonoBehaviour
 {
 
     public enum Direction { up, down, left, right };
     public Direction direction;
+    public Text timeText;
+    private float gameTime = 5;
 
     [Header("房间信息")]
     public GameObject roomPrefab;
@@ -29,6 +32,11 @@ public class RoomGenerator : MonoBehaviour
     List<GameObject> oneWayRooms = new List<GameObject>();
 
     public WallType wallType;
+
+    public GameObject gameOverPanel;
+    public Text finalScoreText;
+    public int score;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +71,17 @@ public class RoomGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameTime -= Time.deltaTime;
+        if (gameTime <= 0)
+        {
+            gameTime = 0;
+            //显示我们的失败面板
+            //播放失败面板的动画
+            gameOverPanel.SetActive(true);
+            finalScoreText.text = score.ToString();
+            gameOver = true;
+        }
+        timeText.text = gameTime.ToString("0");
     }
 
     public void ChangePointPos()
@@ -180,6 +198,12 @@ public class RoomGenerator : MonoBehaviour
         {
             endRoom = farRooms[Random.Range(0, farRooms.Count)];
         }
+    }
+
+    public void BackToMain()
+    {
+        GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage] = score;
+        SceneManager.LoadScene("Main Stage");
     }
 
     

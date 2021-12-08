@@ -29,6 +29,7 @@ public class GlobalControl : MonoBehaviour
     public int LearnTime;
     public int SocialTime;
     public int SportsTime;
+    public int[] FinalScore;
 
     //≥ı ºªØ
     private void Awake()
@@ -43,4 +44,10 @@ public class GlobalControl : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public GlobalControl()
+    {
+        FinalScore = new int[8];
+    }
+
 }

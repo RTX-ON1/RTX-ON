@@ -27,9 +27,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void GoToSettingsMenu()
+    public void onclickSettings()
     {
-
+        SettingsPanel.SetActive(true);
     }
     
     public void GoToMainMenu()
@@ -45,6 +45,11 @@ public class MainMenu : MonoBehaviour
     public void onclickReturn1()
     {
         LoadGamePanel.SetActive(false);
+    }
+
+    public void onclickReturn2()
+    {
+        SettingsPanel.SetActive(false);
     }
 
 }

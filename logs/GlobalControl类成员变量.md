@@ -20,5 +20,13 @@
     public int LearnTime;
     public int SocialTime;
     public int SportsTime;
+    public int FinalScore1;
+    public int FinalScore2;
+    public int FinalScore3;
+    public int FinalScore4;
+    public int FinalScore5;
+    public int FinalScore6;
+    public int FinalScore7;
+    public int FinalScore8;
 ```
 

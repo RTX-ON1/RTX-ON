@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class MainStage : MonoBehaviour
 {
@@ -14,16 +15,17 @@ public class MainStage : MonoBehaviour
     public GameObject StudyText;
     public GameObject MapPanel;
     public GameObject EventPanel;
+    public GameObject MenuPanel;
     public TextAsset EventsData;
     public string[] Events;
     public int EventNum;
+    public AudioSource BGM;
+    public Slider BGMSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-        setDateText();
-        setActText();
-        setStudyText();
+        Debug.Log("Start called");
         LoadEvents();
     }
 
@@ -33,12 +35,26 @@ public class MainStage : MonoBehaviour
         
     }
 
+    void OnEnable()
+    {
+        RefreshText();
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+    }
+
     public void setDateText()
     {
 
         GlobalControl.Instance.date = "2019/09/01";
         Text txt = DateText.GetComponent<Text>();
         txt.text = GlobalControl.Instance.date + "\n距离ddl还有\n" + theDay2DDL();
+        Debug.Log("date text set");
 
     }
 
@@ -65,7 +81,8 @@ public class MainStage : MonoBehaviour
 
         Text txt = ActText.GetComponent<Text>();
         txt.text = "社团：\n\t动漫社：" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t吉他社：" + GlobalControl.Instance.JitaClubScore.ToString() + "\n社交：\n\t李浩民：" + GlobalControl.Instance.SocialScore.ToString();
-        
+        Debug.Log("act text set");
+
     }
 
     public void setStudyText()
@@ -73,12 +90,18 @@ public class MainStage : MonoBehaviour
 
         Text txt = StudyText.GetComponent<Text>();
         txt.text = "学习：\n\t分数：" + GlobalControl.Instance.LearningScore.ToString() + "\n\t时间：" + GlobalControl.Instance.LearnTime.ToString() + "\n体育：\n\t分数：" + GlobalControl.Instance.SportsScore.ToString();
+        Debug.Log("study text set");
 
     }
 
     public void onclickMap()
     {
         MapPanel.SetActive(true);
+    }
+
+    public void onclickMenu()
+    {
+        MenuPanel.SetActive(true);
     }
 
     public void onclickSprots()
@@ -93,7 +116,7 @@ public class MainStage : MonoBehaviour
 
     public void onclickClub()
     {
-
+        SceneManager.LoadScene("Learning Game");
     }
 
     public void onclickSocial()
@@ -104,6 +127,17 @@ public class MainStage : MonoBehaviour
     public void onclickCloseMap()
     {
         MapPanel.SetActive(false);
+    }
+
+    public void onclickCloseMenu()
+    {
+        MenuPanel.SetActive(false);
+    }
+
+    public void onclickExit()
+    {
+        GameObject.Find("Canvas").GetComponent<SaveGame>().SaveGameFunc();
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void randomEvent(int ToDo, int Done)
@@ -134,6 +168,7 @@ public class MainStage : MonoBehaviour
     {
         Events = EventsData.text.Split('\n');
         EventNum = Events.Length;
+        Debug.Log("events loaded");
     }
 
     public int isBeginningOfTerm()
@@ -149,6 +184,18 @@ public class MainStage : MonoBehaviour
     public void EventHappen(int ID)
     {
         EventPanel.SetActive(true);
+    }
+
+    public void BGMControl()
+    {
+        BGM.volume = BGMSlider.value;
+    }
+
+    public void RefreshText()
+    {
+        setDateText();
+        setActText();
+        setStudyText();
     }
 
 }

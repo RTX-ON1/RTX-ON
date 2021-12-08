@@ -15,6 +15,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Examination.unity
     guid: ae76d2ff6ec65cb4c982a07b0ddd28c7
   - enabled: 1
-    path: Assets/Scenes/Pllane Fight.unity
+    path: Assets/Scenes/Plane Fight.unity
     guid: 78772e1e16565f2448dc6731163ff4a8
+  - enabled: 1
+    path: Assets/Scenes/Learning Game.unity
+    guid: 505f642c78d77cf4abc66f33e6357923
+  - enabled: 1
+    path: Assets/Scenes/LongRun.unity
+    guid: 61158f240b35a3a40903535390de8597
+  - enabled: 1
+    path: Assets/Scenes/Pullup_Situp.unity
+    guid: 843d9763d41128140bf09c14d8ff84a3
+  - enabled: 1
+    path: Assets/Scenes/ShoutRun.unity
+    guid: 3420b6ba25cb35a4f856e06d74dcf4e7
+  - enabled: 1
+    path: Assets/Scenes/VitalCapacity.unity
+    guid: 471be732ec65646478cff8cc3ed5622a
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 2325f4c0838655d48b4cc041cb3c3377
+  - enabled: 1
+    path: Assets/Scenes/tankwar.unity
+    guid: 15836ded4a424c14ba9c0f05817e4702
   m_configObjects: {}

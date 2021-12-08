@@ -25,13 +25,13 @@ public class SpecialAirBarriar : MonoBehaviour
         
     }
 
-    public void changeVisible()
+    private void changeVisible()
     {   
         Invoke("changeInvisible",5f);
         sr.sprite = wallSprite[0];       
     }
 
-    public void changeInvisible()
+    private void changeInvisible()
     {
         sr.sprite = wallSprite[1];
     }

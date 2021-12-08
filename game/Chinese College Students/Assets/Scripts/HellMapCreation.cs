@@ -21,7 +21,7 @@ public class HellMapCreation : MonoBehaviour
     {   
         //15s钟随机生成bonus
         bonusTimeVal+=Time.deltaTime;
-        if (bonusTimeVal>=15)
+        if (bonusTimeVal>=10)
         {            
             CreateBonus();
             bonusTimeVal = 0;

@@ -87,7 +87,7 @@ public class PlayerMananger : MonoBehaviour
     }
     private void DecideWin() //判断胜利的条件
     {
-        if (playerScore>=1000)
+        if (playerScore>=1500)
         {
             isWin = true;
         }

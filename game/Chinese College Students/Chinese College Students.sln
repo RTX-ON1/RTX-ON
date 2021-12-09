@@ -1,7 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{06d819ad-4124-e30b-f6de-8aa8e8490647}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mathematics", "Unity.Mathematics.csproj", "{819bd85c-a7b9-ced2-11bb-22423fc9dbbe}"
@@ -69,9 +68,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mathematics.Editor", "Unity.Mathematics.Editor.csproj", "{7de61da1-913a-7736-ceb5-961a32df84a4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InternalAPIEditorBridge.001", "Unity.InternalAPIEditorBridge.001.csproj", "{67287b6e-b5d3-b0cd-ed49-d131e3b0ad22}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{FA14E811-9210-B230-EC70-93A5FA33D8E5}"
->>>>>>> f1064fe20f803950bf11b1661a352f683e580bed
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

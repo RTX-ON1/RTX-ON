@@ -173,6 +173,7 @@ public class Enemy : MonoBehaviour
         
         //玩家的得分加100
         PlayerMananger.Instance.playerScore += 100;
+        GlobalControl.Instance.SocialScore += 100;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 

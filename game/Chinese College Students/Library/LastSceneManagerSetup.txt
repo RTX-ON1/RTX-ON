@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Main Menu.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/Plane Fight.unity
+=======
+- path: Assets/Scenes/Main Menu.unity
+>>>>>>> 5a78b0d60da5d8e77277e745335c1b3cb6a48cfb
+>>>>>>> 424fdad8225da000ecb31fad5e4088ef264e1370
   isLoaded: 1
   isActive: 1
   isSubScene: 0

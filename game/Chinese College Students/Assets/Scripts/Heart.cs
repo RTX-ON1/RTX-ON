@@ -10,6 +10,7 @@ public class Heart : MonoBehaviour
     public bool isEnemyHeart;
     public Sprite BrokenSprite; 
     public GameObject explosionPrefab;
+    public AudioClip dieAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class Heart : MonoBehaviour
         Instantiate(explosionPrefab,transform.position,transform.rotation);
         PlayerMananger.Instance.isDefeat = true;
         Invoke("ReturnToMenu",3);
+        AudioSource.PlayClipAtPoint(dieAudio,transform.position);
 
     }
     private void ReturnToMenu() //返回主界面

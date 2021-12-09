@@ -11,6 +11,7 @@ public class MyJet : MonoBehaviour
     private float count = 0;
     public static bool isdestory;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +32,21 @@ public class MyJet : MonoBehaviour
 
         // 按键响应
         float step = moveSpeed * Time.deltaTime;
-        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            if(transform.position.x<-2){
+            return;
+        }
             transform.Translate(-step, 0, 0); 
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            if(transform.position.x>2){
+            return;
+        }
             transform.Translate(step, 0, 0);
         }
+
     }
 
     private void Fire()

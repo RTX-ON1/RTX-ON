@@ -6,6 +6,10 @@ public class Bonus_StopAllEnemy : MonoBehaviour
 {   
     public float stopTimeVal = 0;
     // Start is called before the first frame update
+    //public AudioSource stopAudio;
+    public AudioClip BonusStopAudio;
+    
+    
     void Start()
     {
         
@@ -27,6 +31,12 @@ public class Bonus_StopAllEnemy : MonoBehaviour
     {
         Enemy.isStopEnemyBonusActive = false;
 
+    }
+    public void PlayAudio()
+    {   
+        // stopAudio.clip = BonusStopAudio;
+        // stopAudio.Play();
+        AudioSource.PlayClipAtPoint(BonusStopAudio,transform.position);
     }
     
 }

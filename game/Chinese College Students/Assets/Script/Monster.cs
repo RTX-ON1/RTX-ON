@@ -55,7 +55,7 @@ public class Monster : MonoBehaviour
 
         // 头像的大小设为80px (宽度)
         float imgWidth = sprite.rect.width; // 图像的实际宽度
-        float scale = 80 / imgWidth; // 缩放比例
+        float scale = 320 / imgWidth; // 缩放比例
         animal.localScale = new Vector3(scale, scale, scale);
     }
 

@@ -10,17 +10,26 @@ public class Control : MonoBehaviour
     public GameObject left;
     public GameObject right;
     public Text leftcount;
+    public GameObject EndPanel;
+    public Text EndText;
     int flag;
+    int playerrank;
     int count = 20;
+    float playerTime;
+    float deltatime;
+    float timerate = 0.05f;
     void Start()
     {
         flag = Random.Range(0,2);
-        Debug.Log(flag);
+        // Debug.Log(flag);
+        playerTime = 0;
+        deltatime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerTime += Time.deltaTime;
         if(flag == 0)
         {
             left.SetActive(true);
@@ -46,19 +55,63 @@ public class Control : MonoBehaviour
         leftcount.text = "" + count;
 
         //游戏结束条件
-        if(count == 0)
+        if(Time.time >= deltatime)
         {
-            flag = -1;
-            left.SetActive(false);
-            right.SetActive(false);
-            Debug.Log("GameOver");
-            Invoke("ExitGame",3f);
+          if(count == 0)
+            {
+                flag = -1;
+                left.SetActive(false);
+                right.SetActive(false);
+                deltatime += 99999;
+                Debug.Log("GameOver");
+                Debug.Log(playerTime);
+                Rank(playerTime);
+                Debug.Log(playerrank);
+                Invoke("ExitGame",3f);
+            }
+            deltatime += timerate;
         }
+        
     }
 
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-        GlobalControl.Instance.SportsScore++;
+        switch (playerrank)
+        {
+            case 1 : GlobalControl.Instance.SportsScore += 4; break;
+            case 2 : GlobalControl.Instance.SportsScore += 3; break;
+            case 3 : GlobalControl.Instance.SportsScore += 2; break;
+            case 4 : GlobalControl.Instance.SportsScore += 1; break;
+
+        }
+    }
+
+    private void Rank(float playerTime)
+    {
+        if(playerTime < 6)
+        {
+            EndText.text = "你的得分为\nA\n你跑的也忒快了";
+            EndPanel.SetActive(true);
+            playerrank = 1;
+        }
+        else if(playerTime < 7)
+        {
+            EndText.text = "你的得分为\nB\n请继续努力";
+            EndPanel.SetActive(true);
+            playerrank = 2;
+        }
+        else if(playerTime < 8)
+        {
+            EndText.text = "你的得分为\nC\n还可以更快一点";
+            EndPanel.SetActive(true);
+            playerrank = 3;
+        }
+        else
+        {
+            EndText.text = "你的得分为\nD\n拜托，你很弱诶";
+            EndPanel.SetActive(true);
+            playerrank = 4;
+        }
     }
 }

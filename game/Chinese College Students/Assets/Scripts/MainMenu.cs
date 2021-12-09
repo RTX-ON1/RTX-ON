@@ -22,9 +22,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SaveGame savegame = new SaveGame();
-        savegame.LoadGameFunc();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameObject.Find("Canvas").GetComponent<SaveGame>().LoadGameFunc();
+        SceneManager.LoadScene("Main Stage");
     }
 
     public void onclickSettings()

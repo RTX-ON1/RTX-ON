@@ -18,8 +18,8 @@ public class GlobalControl : MonoBehaviour
 
 
     // 当前玩家的得分
-    public string date;
-    public string ddl;
+    public string date = "2019/09/01";
+    public string ddl = "2019/12/31";
     public int FeijiClubScore;
     public int JitaClubScore;
     public int SocialScore;
@@ -30,6 +30,9 @@ public class GlobalControl : MonoBehaviour
     public int SocialTime;
     public int SportsTime;
     public int[] FinalScore;
+
+    // 不需要保存的数据
+    public int IfNextStage;
 
     //初始化
     private void Awake()

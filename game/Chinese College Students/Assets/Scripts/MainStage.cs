@@ -16,6 +16,7 @@ public class MainStage : MonoBehaviour
     public GameObject MapPanel;
     public GameObject EventPanel;
     public GameObject MenuPanel;
+    public GameObject FinalExamPanel;
     public TextAsset EventsData;
     public string[] Events;
     public int EventNum;
@@ -25,7 +26,7 @@ public class MainStage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start called");
+        //Debug.Log("Start called");
         LoadEvents();
     }
 
@@ -38,23 +39,34 @@ public class MainStage : MonoBehaviour
     void OnEnable()
     {
         RefreshText();
-        Debug.Log("OnEnable called");
+        //Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
+        if(Convert.ToDateTime(GlobalControl.Instance.date) == Convert.ToDateTime(GlobalControl.Instance.ddl))
+        {
+            FinalExamPanel.SetActive(true);
+        }
+        if(GlobalControl.Instance.IfNextStage == 1)
+        {
+            GlobalControl.Instance.IfNextStage = 0;
+            GameObject.Find("NextStagePanel").SetActive(true);
+            GameObject.Find("FinalExamScoreText").GetComponent<Text>().text = "这次期末考了" + GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage].ToString() + "分";
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
+        //Debug.Log(mode);
     }
 
     public void setDateText()
     {
 
         GlobalControl.Instance.date = "2019/09/01";
+        GlobalControl.Instance.ddl = "2019/12/31";
         Text txt = DateText.GetComponent<Text>();
         txt.text = GlobalControl.Instance.date + "\n距离ddl还有\n" + theDay2DDL();
-        Debug.Log("date text set");
+        //Debug.Log("date text set");
 
     }
 
@@ -81,7 +93,7 @@ public class MainStage : MonoBehaviour
 
         Text txt = ActText.GetComponent<Text>();
         txt.text = "社团：\n\t动漫社：" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t吉他社：" + GlobalControl.Instance.JitaClubScore.ToString() + "\n社交：\n\t李浩民：" + GlobalControl.Instance.SocialScore.ToString();
-        Debug.Log("act text set");
+        //Debug.Log("act text set");
 
     }
 
@@ -90,13 +102,14 @@ public class MainStage : MonoBehaviour
 
         Text txt = StudyText.GetComponent<Text>();
         txt.text = "学习：\n\t分数：" + GlobalControl.Instance.LearningScore.ToString() + "\n\t时间：" + GlobalControl.Instance.LearnTime.ToString() + "\n体育：\n\t分数：" + GlobalControl.Instance.SportsScore.ToString();
-        Debug.Log("study text set");
+        //Debug.Log("study text set");
 
     }
 
     public void onclickMap()
     {
-        MapPanel.SetActive(true);
+        if(Convert.ToDateTime(GlobalControl.Instance.date) != Convert.ToDateTime(GlobalControl.Instance.ddl))
+            MapPanel.SetActive(true);
     }
 
     public void onclickMenu()
@@ -150,6 +163,20 @@ public class MainStage : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void onclickNextStage()
+    {
+        GameObject.Find("NextStagePanel").SetActive(false);
+        toNextStage();
+    }
+
+    public void toNextStage()
+    {
+        GlobalControl.Instance.stage += 1;
+        GlobalControl.Instance.date = "2020/1/1";
+        GlobalControl.Instance.ddl = "2020/6/30";
+        RefreshText();
+    }
+
     public void randomEvent(int ToDo, int Done)
     {
         int i = EventNum/2;
@@ -178,7 +205,7 @@ public class MainStage : MonoBehaviour
     {
         Events = EventsData.text.Split('\n');
         EventNum = Events.Length;
-        Debug.Log("events loaded");
+        //Debug.Log("events loaded");
     }
 
     public int isBeginningOfTerm()
@@ -210,6 +237,7 @@ public class MainStage : MonoBehaviour
 
     public void FinalExam()
     {
+        GlobalControl.Instance.IfNextStage = 1;
         SceneManager.LoadScene("Examination");
     }
 

@@ -61,7 +61,7 @@ public class PlayerMananger : MonoBehaviour
             GlobalControl.Instance.SocialScore -= 500;
             isDefeat = false;
             Invoke("ReturnToMenu",2);
-            ResetInterScore();           
+            //ResetInterScore();           
             return;
         }
         if (isDead)
@@ -74,7 +74,7 @@ public class PlayerMananger : MonoBehaviour
             GlobalControl.Instance.SocialScore += 1500;
             isWin = false;
             Invoke("ReturnToMenu",3);
-            ResetInterScore();
+            //ResetInterScore();
             return;
         }
         playerScoreText.text = playerScore.ToString();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapCreation : MonoBehaviour
 {
@@ -142,8 +143,6 @@ public class MapCreation : MonoBehaviour
     private void CreateEnemy()
     {   
         
-
-
         int tempnum = Random.Range(0,2);
         if (tempnum==0)
         {
@@ -164,7 +163,7 @@ public class MapCreation : MonoBehaviour
             GameObject go = Instantiate(item[11],EnemyPos,Quaternion.identity);
             EnemyList1.Add(go);
         }
-        else
+        else if (tempnum == 1)       
         {   
             int num = Random.Range(0,3);
             Vector3 EnemyPos = new Vector3();
@@ -208,10 +207,19 @@ public class MapCreation : MonoBehaviour
         
     }
     private void destroyAllEnemy()
-    {
+    {   
+        if (PlayerMananger.Instance.playerScore + 100*EnemyList1.Count >= 1500)
+            {
+                GlobalControl.Instance.SocialScore += PlayerMananger.Instance.playerScore;
+                GlobalControl.Instance.SocialScore += 100*EnemyList1.Count;
+                SceneManager.LoadScene("Main Stage");
+                
+            }
         for (int i = 0; i < EnemyList1.Count; i++)
         {   
-            PlayerMananger.Instance.playerScore = PlayerMananger.Instance.playerScore + 100;
+            
+            PlayerMananger.Instance.playerScore += 100;
+            GlobalControl.Instance.SocialScore += 100;            
             Instantiate(Explosion,EnemyList1[i].transform.localPosition,Quaternion.identity);
             Destroy(EnemyList1[i]);            
             

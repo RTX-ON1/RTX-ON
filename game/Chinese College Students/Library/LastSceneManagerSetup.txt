@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Main Menu.unity
-=======
-- path: Assets/Scenes/Examination.unity
->>>>>>> 5af3e73b69b7983f10e254f655cb5c123fe5c016
+- path: Assets/Scenes/Tankwar_HellEdition.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

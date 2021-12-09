@@ -15,9 +15,9 @@ public class Target_LR : MonoBehaviour
     void Start()
     {
         angle = Random.Range(1.5f*pi,2*pi);
-        Debug.Log(angle);
+        // Debug.Log(angle);
         targetposition = new Vector3(center.transform.position.x + r * Mathf.Cos(angle),center.transform.position.y + r * Mathf.Sin(angle), center.transform.position.z);
-        Debug.Log("targetposition:"+targetposition+"COS:"+Mathf.Cos(angle)+"SIN:"+Mathf.Sin(angle));
+        // Debug.Log("targetposition:"+targetposition+"COS:"+Mathf.Cos(angle)+"SIN:"+Mathf.Sin(angle));
         transform.position = targetposition;
     }
 
@@ -31,7 +31,7 @@ public class Target_LR : MonoBehaviour
         if(Time.time >= nexttime){
             angle = Random.Range(pi,1.5f*pi);
             targetposition = new Vector3(center.transform.position.x + r * Mathf.Cos(angle),center.transform.position.y + r * Mathf.Sin(angle), center.transform.position.z);
-            Debug.Log("angel:"+angle+"tragetposition:"+targetposition);
+            // Debug.Log("angel:"+angle+"tragetposition:"+targetposition);
             transform.position = targetposition;
             nexttime += deltatime;
         }

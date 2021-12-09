@@ -108,22 +108,30 @@ public class MainStage : MonoBehaviour
 
     public void onclickSprots()
     {
+        int num = Random.Range(0,4);
 
+        switch (num)
+        {
+            case 0 : SceneManager.LoadScene("LongRun"); break;
+            case 1 : SceneManager.LoadScene("ShortRun"); break;
+            case 2 : SceneManager.LoadScene("Pullup_Situp"); break;
+            case 3 : SceneManager.LoadScene("VitalCapacity"); break;
+        }
     }
 
     public void onclickLearn()
     {
-
+        SceneManager.LoadScene("Learning Game");
     }
 
     public void onclickClub()
     {
-        SceneManager.LoadScene("Learning Game");
+        SceneManager.LoadScene("Plane Fight");
     }
 
     public void onclickSocial()
     {
-
+        SceneManager.LoadScene("tankwar");
     }
 
     public void onclickCloseMap()

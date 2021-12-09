@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bonus_Bomb : MonoBehaviour
 {   
+    //bomb的具体实现算法在MapCreation脚本中。
     public static bool isBombActive;
     private int enemyListLength;
     

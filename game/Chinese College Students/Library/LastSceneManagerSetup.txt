@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Examination.unity
-=======
-- path: Assets/Scenes/Main Stage.unity
->>>>>>> f1064fe20f803950bf11b1661a352f683e580bed
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -34,6 +34,6 @@ public class Heart : MonoBehaviour
     }
     private void ReturnToMenu() //返回主界面
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Stage");
     }
 }

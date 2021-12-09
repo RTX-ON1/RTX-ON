@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Barrier
+  - Bonus_AddLife
+  - Bonus_Bomb
+  - Bonus_StopAllEnemy
+  - Heart
+  - Wall
+  - Enemy
+  - Tank
+  - SpecialAirBarriar
   layers:
   - Default
   - TransparentFX

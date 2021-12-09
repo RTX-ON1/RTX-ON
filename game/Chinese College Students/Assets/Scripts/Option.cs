@@ -31,7 +31,7 @@ public class Option : MonoBehaviour
         }
         if (choice == 1&&Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("tankwar");
         }
     }
 }

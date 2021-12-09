@@ -1,0 +1,9 @@
+sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/Main Stage.unity
+=======
+- path: Assets/Scenes/Main Menu.unity
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

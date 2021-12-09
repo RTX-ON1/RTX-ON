@@ -74,10 +74,11 @@ public class MyGame : MonoBehaviour
     }
     public void Replay()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Plane Fight");
     }
     public void ReturnToMain()
     {
-        SceneManager.LoadScene(0);
+        GlobalControl.Instance.FeijiClubScore= score;
+        SceneManager.LoadScene("Main Stage");
     }
 }

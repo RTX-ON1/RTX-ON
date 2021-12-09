@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //属性值
-    public static bool isStopEnemyBonusActive;
+    public static bool isStopEnemyBonusActive;  //控制敌方坦克是否被时停Bonus所停止
     public float moveSpeed = 3;  //控制坦克移动速度
     private Vector3  bulletEulerAngles;
     private float v = -1;
@@ -49,18 +49,18 @@ public class Enemy : MonoBehaviour
                 shieldPrefab.SetActive(false);
             }
         }
-
-       
-
-        
+               
     }
     private void FixedUpdate() 
     {   
         move();
+        moveSpeed = 3;
         if (isStopEnemyBonusActive)
         {               
+            
             Invoke("move",5f);
-            Invoke("SetInvokeTime",5f);                                   
+            Invoke("ResetInvokeTime",5f);
+            //SetInvokeTime();                                           
         }
         if (timeVal >=1f)
         {
@@ -173,6 +173,7 @@ public class Enemy : MonoBehaviour
         
         //玩家的得分加100
         PlayerMananger.Instance.playerScore += 100;
+        GlobalControl.Instance.SocialScore += 100;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) 
@@ -184,7 +185,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void SetInvokeTime()
+    private void ResetInvokeTime()
     {
         isStopEnemyBonusActive = false;
 

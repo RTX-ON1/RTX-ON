@@ -1,20 +1,36 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
+<<<<<<< HEAD
     m_FilePath: F:/RTX ON/game/Chinese College Students/Packages/manifest.json
+=======
+    m_FilePath: D:/net inf/rjgc/RTX-ON/RTX-ON/game/Chinese College Students/Packages/manifest.json
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637744040284047802
     m_Hash: 3463666807
   m_LockFileStatus:
     m_FilePath: F:/RTX ON/game/Chinese College Students/Packages/packages-lock.json
+=======
+      ticks: 637745735678006800
+    m_Hash: 1163970213
+  m_LockFileStatus:
+    m_FilePath: D:/net inf/rjgc/RTX-ON/RTX-ON/game/Chinese College Students/Packages/packages-lock.json
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< HEAD
       ticks: 637744040284147534
     m_Hash: 687325170
+=======
+      ticks: 637745735678016773
+    m_Hash: 1323664193
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -25,7 +41,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 5.0.5
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.animation@5.0.5
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.animation@5.0.5
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.animation
       name: com.unity.2d.animation
       displayName: 2D Animation
@@ -181,7 +201,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 4.0.1
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.pixel-perfect@4.0.1
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.pixel-perfect@4.0.1
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.pixel-perfect
       name: com.unity.2d.pixel-perfect
       displayName: 2D Pixel Perfect
@@ -256,7 +280,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 4.0.2
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.psdimporter@4.0.2
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.psdimporter@4.0.2
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.psdimporter
       name: com.unity.2d.psdimporter
       displayName: 2D PSD Importer
@@ -384,7 +412,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.sprite@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.sprite@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.sprite
       name: com.unity.2d.sprite
       displayName: 2D Sprite
@@ -435,7 +467,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 5.1.2
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.spriteshape@5.1.2
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.spriteshape@5.1.2
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.spriteshape
       name: com.unity.2d.spriteshape
       displayName: 2D SpriteShape
@@ -585,7 +621,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.tilemap@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.tilemap@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.tilemap
       name: com.unity.2d.tilemap
       displayName: 2D Tilemap Editor
@@ -635,7 +675,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.5.7
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.collab-proxy@1.5.7
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.collab-proxy@1.5.7
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.collab-proxy
       name: com.unity.collab-proxy
       displayName: Version Control
@@ -682,10 +726,15 @@ m_PackageAssets:
         - 1.13.5
         - 1.14.1
         - 1.14.4
+<<<<<<< HEAD
         - 1.14.7
         - 1.15.1
         - 1.15.4
         - 1.15.7
+=======
+        - 1.15.1
+        - 1.15.4
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -704,7 +753,10 @@ m_PackageAssets:
         - 1.12.5
         - 1.14.1
         - 1.14.4
+<<<<<<< HEAD
         - 1.14.7
+=======
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -758,7 +810,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.7
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.ide.rider@2.0.7
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.ide.rider@2.0.7
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.ide.rider
       name: com.unity.ide.rider
       displayName: JetBrains Rider Editor
@@ -865,7 +921,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 2.0.12
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.ide.visualstudio@2.0.12
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.ide.visualstudio@2.0.12
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -954,7 +1014,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.2.3
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.ide.vscode@1.2.3
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.ide.vscode@1.2.3
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.ide.vscode
       name: com.unity.ide.vscode
       displayName: Visual Studio Code Editor
@@ -1025,7 +1089,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.1.26
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.test-framework@1.1.26
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.test-framework@1.1.26
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -1120,7 +1188,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 3.0.6
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.textmeshpro@3.0.6
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.textmeshpro@3.0.6
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -1283,7 +1355,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.4.8
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.timeline@1.4.8
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.timeline@1.4.8
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -1441,7 +1517,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.ugui@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.ugui@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.ugui
       name: com.unity.ugui
       displayName: Unity UI
@@ -1504,7 +1584,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.ai@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.ai@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.ai
       name: com.unity.modules.ai
       displayName: AI
@@ -1552,7 +1636,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.androidjni@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.androidjni@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.androidjni
       name: com.unity.modules.androidjni
       displayName: Android JNI
@@ -1600,7 +1688,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.animation@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.animation@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.animation
       name: com.unity.modules.animation
       displayName: Animation
@@ -1648,7 +1740,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.assetbundle
       name: com.unity.modules.assetbundle
       displayName: Asset Bundle
@@ -1696,7 +1792,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.audio@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.audio@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.audio
       name: com.unity.modules.audio
       displayName: Audio
@@ -1744,7 +1844,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.cloth@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.cloth@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.cloth
       name: com.unity.modules.cloth
       displayName: Cloth
@@ -1796,7 +1900,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.director@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.director@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.director
       name: com.unity.modules.director
       displayName: Director
@@ -1852,7 +1960,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.imageconversion
       name: com.unity.modules.imageconversion
       displayName: Image Conversion
@@ -1901,7 +2013,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.imgui@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.imgui@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.imgui
       name: com.unity.modules.imgui
       displayName: IMGUI
@@ -1949,7 +2065,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.jsonserialize
       name: com.unity.modules.jsonserialize
       displayName: JSONSerialize
@@ -1997,7 +2117,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.particlesystem
       name: com.unity.modules.particlesystem
       displayName: Particle System
@@ -2045,7 +2169,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.physics@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.physics@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.physics
       name: com.unity.modules.physics
       displayName: Physics
@@ -2093,7 +2221,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.physics2d@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.physics2d@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.physics2d
       name: com.unity.modules.physics2d
       displayName: Physics 2D
@@ -2141,7 +2273,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.screencapture@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.screencapture@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.screencapture
       name: com.unity.modules.screencapture
       displayName: Screen Capture
@@ -2193,7 +2329,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.terrain@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.terrain@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.terrain
       name: com.unity.modules.terrain
       displayName: Terrain
@@ -2241,7 +2381,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.terrainphysics
       name: com.unity.modules.terrainphysics
       displayName: Terrain Physics
@@ -2297,7 +2441,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.tilemap@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.tilemap@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.tilemap
       name: com.unity.modules.tilemap
       displayName: Tilemap
@@ -2349,7 +2497,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.ui@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.ui@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.ui
       name: com.unity.modules.ui
       displayName: UI
@@ -2397,7 +2549,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.uielements@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.uielements@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.uielements
       name: com.unity.modules.uielements
       displayName: UIElements
@@ -2461,7 +2617,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.umbra@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.umbra@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.umbra
       name: com.unity.modules.umbra
       displayName: Umbra
@@ -2509,7 +2669,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.unityanalytics
       name: com.unity.modules.unityanalytics
       displayName: Unity Analytics
@@ -2565,7 +2729,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.unitywebrequest
       name: com.unity.modules.unitywebrequest
       displayName: Unity Web Request
@@ -2613,7 +2781,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
       name: com.unity.modules.unitywebrequestassetbundle
       displayName: Unity Web Request Asset Bundle
@@ -2669,7 +2841,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.unitywebrequestaudio
       name: com.unity.modules.unitywebrequestaudio
       displayName: Unity Web Request Audio
@@ -2725,7 +2901,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.unitywebrequesttexture
       name: com.unity.modules.unitywebrequesttexture
       displayName: Unity Web Request Texture
@@ -2781,7 +2961,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.unitywebrequestwww
       name: com.unity.modules.unitywebrequestwww
       displayName: Unity Web Request WWW
@@ -2853,7 +3037,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.vehicles@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.vehicles@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.vehicles
       name: com.unity.modules.vehicles
       displayName: Vehicles
@@ -2905,7 +3093,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.video@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.video@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.video
       name: com.unity.modules.video
       displayName: Video
@@ -2965,7 +3157,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.vr@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.vr@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.vr
       name: com.unity.modules.vr
       displayName: VR
@@ -3027,7 +3223,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.wind@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.wind@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.wind
       name: com.unity.modules.wind
       displayName: Wind
@@ -3075,7 +3275,11 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.xr@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.xr@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.xr
       name: com.unity.modules.xr
       displayName: XR
@@ -3135,7 +3339,11 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.subsystems@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.subsystems@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.subsystems
       name: com.unity.modules.subsystems
       displayName: Subsystems
@@ -3187,7 +3395,11 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.0
       source: 2
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.modules.uielementsnative
       name: com.unity.modules.uielementsnative
       displayName: UIElements Native
@@ -3246,7 +3458,11 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.6
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.ext.nunit@1.0.6
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.ext.nunit@1.0.6
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.ext.nunit
       name: com.unity.ext.nunit
       displayName: Custom NUnit
@@ -3307,7 +3523,11 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 2.0.0
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.nuget.newtonsoft-json
       name: com.unity.nuget.newtonsoft-json
       displayName: Newtonsoft Json
@@ -3383,7 +3603,11 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.1.0
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.mathematics@1.1.0
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.mathematics@1.1.0
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.mathematics
       name: com.unity.mathematics
       displayName: Mathematics
@@ -3462,7 +3686,11 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 4.0.3
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.common@4.0.3
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.common@4.0.3
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.common
       name: com.unity.2d.common
       displayName: 2D Common
@@ -3552,7 +3780,11 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 4.0.1
       source: 1
+<<<<<<< HEAD
       resolvedPath: F:\RTX ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.path@4.0.1
+=======
+      resolvedPath: D:\net inf\rjgc\RTX-ON\RTX-ON\game\Chinese College Students\Library\PackageCache\com.unity.2d.path@4.0.1
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
       assetPath: Packages/com.unity.2d.path
       name: com.unity.2d.path
       displayName: 2D Path
@@ -3619,5 +3851,9 @@ m_PackageAssets:
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
+<<<<<<< HEAD
 m_ProjectPath: F:/RTX ON/game/Chinese College Students/Packages
+=======
+m_ProjectPath: D:/net inf/rjgc/RTX-ON/RTX-ON/game/Chinese College Students/Packages
+>>>>>>> 904d2669e7b1f59d47e650069f73bc9e5ef225f7
 m_EditorVersion: 2020.3.13f1c1 (93b9df9a3ddc)

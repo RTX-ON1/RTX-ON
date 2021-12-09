@@ -791,7 +791,7 @@ MonoBehaviour:
   direction: 0
   timeText: {fileID: 1284436211}
   roomPrefab: {fileID: 6679568689307290095, guid: b00c1a6e645434b4d99afb02a103ee50, type: 3}
-  roomNumber: 10
+  roomNumber: 100
   startColor: {r: 0.3764706, g: 1, b: 0.02745098, a: 1}
   endColor: {r: 0.9098039, g: 0, b: 0.003921569, a: 1}
   generatorPoint: {fileID: 556557203}
@@ -819,6 +819,7 @@ MonoBehaviour:
     wallDLR: {fileID: 4839847175888830086, guid: aee86ca4067000349b8a4744c4672e56, type: 3}
     wallUDLR: {fileID: 4839847175888830086, guid: a7761f56e4bc9dc4a8a638ec3740c76b, type: 3}
   gameOverPanel: {fileID: 1248512197}
+  Map: {fileID: 178457395}
   finalScoreText: {fileID: 1643362649}
   score: 0
   gameOver: 0
@@ -1106,6 +1107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1623803234}
   - component: {fileID: 1623803233}
+  - component: {fileID: 1623803232}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1113,6 +1115,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1623803232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623803231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9beb5c433c45543801b51bb1dacdb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerTransform: {fileID: 0}
+  Ahead: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  smooth: 0
 --- !u!20 &1623803233
 Camera:
   m_ObjectHideFlags: 0
@@ -1401,7 +1419,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1652089491
 MonoBehaviour:
   m_ObjectHideFlags: 0

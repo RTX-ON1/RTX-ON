@@ -56,12 +56,17 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case"Barrier":
+                if (isPlayerBullet)
+                {
+                    collision.SendMessage("PlayAudio");
+                }                
                 Destroy(gameObject);
                 break;
             
             case"Bonus_AddLife":
                 if (isPlayerBullet)
-                {
+                {   
+                    collision.SendMessage("PlayAudio");
                     collision.SendMessage("addLife");
                     Destroy(gameObject);
                     Destroy(collision.gameObject);             
@@ -70,7 +75,8 @@ public class Bullet : MonoBehaviour
 
             case"Bonus_StopAllEnemy":
                 if (isPlayerBullet)
-                {
+                {   
+                    collision.SendMessage("PlayAudio");
                     collision.SendMessage("StopAllEnemy");
                     Destroy(gameObject);
                     Destroy(collision.gameObject);
@@ -79,7 +85,8 @@ public class Bullet : MonoBehaviour
             
             case"Bonus_Bomb":
                 if (isPlayerBullet)
-                {
+                {   
+                    collision.SendMessage("PlayAudio");
                     Bonus_Bomb.isBombActive = true;
                     Destroy(gameObject);
                     Destroy(collision.gameObject);

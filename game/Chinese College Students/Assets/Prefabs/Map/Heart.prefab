@@ -122,5 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371e65ce3eb3900419eeca1c7a207aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemyHeart: 0
   BrokenSprite: {fileID: 21300012, guid: 529e000d42d32de49bc475716ba7ae37, type: 3}
   explosionPrefab: {fileID: 558707232626797512, guid: 4012ecd60708fba499d40a7a2049e54b, type: 3}
+  dieAudio: {fileID: 8300000, guid: 41660860d05dbdf49b3c8da6332a4ef9, type: 3}

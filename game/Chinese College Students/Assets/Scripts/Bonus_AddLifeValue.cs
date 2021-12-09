@@ -6,6 +6,7 @@ public class Bonus_AddLifeValue : MonoBehaviour
 {   
     // public bool isAddLifeBonusActive;//判断是否激活增加生命的bonus
     // Start is called before the first frame update
+    public AudioClip BonusAddLifeAudio;
     void Start()
     {
         
@@ -25,5 +26,11 @@ public class Bonus_AddLifeValue : MonoBehaviour
     {
         PlayerMananger.Instance.lifeValue+=1;
 
+    }
+    public void PlayAudio()
+    {   
+        // stopAudio.clip = BonusStopAudio;
+        // stopAudio.Play();
+        AudioSource.PlayClipAtPoint(BonusAddLifeAudio,transform.position);
     }
 }

@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Pullup_Situp.unity
     guid: 843d9763d41128140bf09c14d8ff84a3
   - enabled: 1
-    path: Assets/Scenes/ShoutRun.unity
+    path: Assets/Scenes/ShortRun.unity
     guid: 3420b6ba25cb35a4f856e06d74dcf4e7
   - enabled: 1
     path: Assets/Scenes/VitalCapacity.unity

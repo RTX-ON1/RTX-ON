@@ -50,7 +50,7 @@ public class Pointer_PS : MonoBehaviour
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-
+        GlobalControl.Instance.SportsScore++;
     }
     private void OnTriggerStay(Collider other)
     {

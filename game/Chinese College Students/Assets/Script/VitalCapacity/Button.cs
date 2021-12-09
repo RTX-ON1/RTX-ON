@@ -49,6 +49,6 @@ public class Button : MonoBehaviour
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-
+        GlobalControl.Instance.SportsScore++;
     }
 }

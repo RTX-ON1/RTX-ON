@@ -59,6 +59,6 @@ public class Control : MonoBehaviour
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-
+        GlobalControl.Instance.SportsScore++;
     }
 }

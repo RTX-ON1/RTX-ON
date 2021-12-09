@@ -11,7 +11,8 @@ public class Pointer_LR : MonoBehaviour
     public GameObject center;
     public Text lefttarget;
     int degreesPersecond = 45;
-    float gameTime = 100;
+    float gameTime = 30;
+    float keepTime = 0;
     void Start()
     {
         // Debug.Log(degreesPersecond);
@@ -41,17 +42,17 @@ public class Pointer_LR : MonoBehaviour
             }
         }
         
-        lefttarget.text = "" + Time.time.ToString("0");
+        lefttarget.text = "" + keepTime.ToString("0");
     }
 
     private void OnTriggerStay(Collider other)
     {
-        gameTime -= Time.deltaTime*2;
+        keepTime += Time.deltaTime;
     }
 
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-
+        GlobalControl.Instance.SportsScore++;
     }
 }

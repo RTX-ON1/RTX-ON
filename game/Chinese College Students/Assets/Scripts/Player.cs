@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab; 
     public GameObject explosionPrefab; 
     public GameObject shieldPrefab;
+    public AudioSource moveAudio;
+    public AudioClip[] tankAudio;
     
     private void Awake()
     {
@@ -102,9 +104,17 @@ public class Player : MonoBehaviour
             sr.sprite = tankSprite[0];
             bulletEulerAngles= new Vector3(0,0,0);
         }
+        if (Mathf.Abs(v)>0.05f)
+        {
+            moveAudio.clip = tankAudio[1];           
+            if (!moveAudio.isPlaying)
+            {
+                moveAudio.Play();
+            }
+        }
         
         if (v!= 0)
-        {
+        {   
             return;
         }
 
@@ -119,6 +129,25 @@ public class Player : MonoBehaviour
         {
             sr.sprite = tankSprite[1];
             bulletEulerAngles= new Vector3(0,0,-90);
+        }
+        if (Mathf.Abs(h)>0.05f)
+        {
+            moveAudio.clip = tankAudio[1];           
+            if (!moveAudio.isPlaying)
+            {
+                moveAudio.Play();
+            }
+        }
+        else
+        {
+            if (Mathf.Abs(v)>0.05f)
+        {
+            moveAudio.clip = tankAudio[0];           
+            if (!moveAudio.isPlaying)
+            {
+                moveAudio.Play();
+            }
+        }
         }
 
     }

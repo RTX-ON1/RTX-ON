@@ -34,9 +34,12 @@ public class RoomGenerator : MonoBehaviour
     public WallType wallType;
 
     public GameObject gameOverPanel;
+    public GameObject Map;
     public Text finalScoreText;
     public int score;
     public bool gameOver;
+
+    private int M_time;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +68,7 @@ public class RoomGenerator : MonoBehaviour
         FindEndRoom();
 
         endRoom.GetComponent<SpriteRenderer>().color = endColor;
+        M_time = 0;
 
     }
 
@@ -82,6 +86,19 @@ public class RoomGenerator : MonoBehaviour
             gameOver = true;
         }
         timeText.text = gameTime.ToString("0");
+        if (Input.GetKey(KeyCode.M))
+        {
+            if(M_time > 30)
+            {
+                Debug.Log("m");
+                M_time = 0;
+                if(Map.activeSelf)
+                    Map.SetActive(false);
+                else Map.SetActive(true);
+            }
+            
+        }
+        M_time++;
     }
 
     public void ChangePointPos()

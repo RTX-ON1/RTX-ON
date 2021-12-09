@@ -10,7 +10,8 @@ public class Pointer_PS : MonoBehaviour
     public GameObject center;
     public GameObject target;
     public Text scoreText;
-    public GameObject EndText;
+    public GameObject EndPannel;
+    public Text EndText;
     int degreesPersecond = 80;  //初始速度
     int addspeed = 10;   //加速度
     int score = 0;  //得分
@@ -20,6 +21,7 @@ public class Pointer_PS : MonoBehaviour
     float angle;    //目标生成角度
     float pi = Mathf.PI;
     float r = 1.31f;
+    int playerrank;
     
     void Start()
     {
@@ -41,16 +43,50 @@ public class Pointer_PS : MonoBehaviour
         //游戏结束条件
         if(!ifontarget && Input.GetKeyDown("space"))
             {
-                EndText.SetActive(true);
+                Rank(score);
                 degreesPersecond = 0;
                 Invoke("ExitGame",3f);
             }
 
     }
+
+    private void Rank(int playerScore)
+    {
+        if(playerScore > 25)
+        {
+            EndText.text = "你的得分为\nA\n健身大神说的就是你";
+            EndPannel.SetActive(true);
+            playerrank = 1;
+        }
+        else if(playerScore > 20)
+        {
+            EndText.text = "你的得分为\nB\n超出常人的力量";
+            EndPannel.SetActive(true);
+            playerrank = 2;
+        }
+        else if(playerScore > 15)
+        {
+            EndText.text = "你的得分为\nC\n体质健硕";
+            EndPannel.SetActive(true);
+            playerrank = 3;
+        }
+        else
+        {
+            EndText.text = "你的得分为\nD\n拜托，你很弱诶";
+            EndPannel.SetActive(true);
+            playerrank = 4;
+        }
+    }
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-        GlobalControl.Instance.SportsScore++;
+        switch (playerrank)
+        {
+            case 1 : GlobalControl.Instance.SportsScore += 4; break;
+            case 2 : GlobalControl.Instance.SportsScore += 3; break;
+            case 3 : GlobalControl.Instance.SportsScore += 2; break;
+            case 4 : GlobalControl.Instance.SportsScore += 1; break;
+        }
     }
     private void OnTriggerStay(Collider other)
     {

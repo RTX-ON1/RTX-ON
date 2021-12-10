@@ -18,10 +18,7 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        doorLeft.SetActive(roomLeft);
-        doorRight.SetActive(roomRight);
-        doorUp.SetActive(roomUp);
-        doorDown.SetActive(roomDown);
+
     }
 
     // Update is called once per frame

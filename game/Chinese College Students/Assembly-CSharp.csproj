@@ -101,6 +101,7 @@
     <Compile Include="Assets\Script\LongRun\Target_LR.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
     <Compile Include="Assets\Script\MyGame.cs" />
+    <Compile Include="Assets\Scripts\DelaytoInvoke.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\events.txt" />

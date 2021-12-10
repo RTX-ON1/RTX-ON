@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        GlobalControl.Instance.Reset();
         if (PlayerPrefs.HasKey("BGMVolume"))
             AudioControlSlider.value = PlayerPrefs.GetFloat("BGMVolume");
         else AudioControlSlider.value = 1;

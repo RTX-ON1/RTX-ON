@@ -23,6 +23,7 @@ public class MainStage : MonoBehaviour
     public AudioSource BGM;
     public Slider BGMSlider;
     public GameObject TutorialPanel;
+    public GameObject NextStagePanel;
 
     // Start is called before the first frame update
     void Start()
@@ -51,14 +52,14 @@ public class MainStage : MonoBehaviour
         setBGM();
         //Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
-        if(Convert.ToDateTime(GlobalControl.Instance.date) == Convert.ToDateTime(GlobalControl.Instance.ddl))
+        if(GlobalControl.Instance.theDay2DDL() < 5)
         {
             FinalExamPanel.SetActive(true);
         }
         if(GlobalControl.Instance.IfNextStage == 1)
         {
             GlobalControl.Instance.IfNextStage = 0;
-            GameObject.Find("NextStagePanel").SetActive(true);
+            NextStagePanel.SetActive(true);
             GameObject.Find("FinalExamScoreText").GetComponent<Text>().text = "这次期末考了" + GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage].ToString() + "分";
         }
     }
@@ -71,31 +72,11 @@ public class MainStage : MonoBehaviour
 
     public void setDateText()
     {
-
-        GlobalControl.Instance.date = "2019/09/01";
-        GlobalControl.Instance.ddl = "2019/12/31";
+        
         Text txt = DateText.GetComponent<Text>();
-        txt.text = GlobalControl.Instance.date + "\n距离期末考试还有\n" + theDay2DDL();
+        txt.text = GlobalControl.Instance.date + "\n距离期末考试还有\n" + GlobalControl.Instance.theDay2DDL().ToString() + "天";
         //Debug.Log("date text set");
 
-    }
-
-    public string theDay2DDL()
-    {
-        DateTime dt = Convert.ToDateTime(GlobalControl.Instance.date);
-        int day_span;
-        if (dt.DayOfYear < 181)
-        {
-            day_span = 180 - dt.DayOfYear;
-        }
-        else
-        {
-            day_span = 365 - dt.DayOfYear;
-        }
-
-        string day = day_span.ToString() + "天" ;
-
-        return day;
     }
 
     public void setActText()
@@ -109,7 +90,6 @@ public class MainStage : MonoBehaviour
 
     public void setStudyText()
     {
-
         Text txt = StudyText.GetComponent<Text>();
         txt.text = "学习：\n\t分数：" + GlobalControl.Instance.LearningScore.ToString() + "\n\t时间：" + GlobalControl.Instance.LearnTime.ToString() + "\n体育：\n\t分数：" + GlobalControl.Instance.SportsScore.ToString();
         //Debug.Log("study text set");
@@ -118,7 +98,7 @@ public class MainStage : MonoBehaviour
 
     public void onclickMap()
     {
-        if(Convert.ToDateTime(GlobalControl.Instance.date) != Convert.ToDateTime(GlobalControl.Instance.ddl))
+        if(GlobalControl.Instance.theDay2DDL() >= 5)
             MapPanel.SetActive(true);
     }
 
@@ -131,6 +111,7 @@ public class MainStage : MonoBehaviour
 
     public void onclickSprots()
     {
+        GlobalControl.Instance.DayPassSports();
         int num = Random.Range(0,4);
 
         switch (num)
@@ -144,16 +125,20 @@ public class MainStage : MonoBehaviour
 
     public void onclickLearn()
     {
+        randomEvent(1, 0);
+        GlobalControl.Instance.DayPassLearn();
         SceneManager.LoadScene("Learning Game");
     }
 
     public void onclickClub()
     {
+        GlobalControl.Instance.DayPassClub();
         SceneManager.LoadScene("Plane Fight");
     }
 
     public void onclickSocial()
     {
+        GlobalControl.Instance.DayPassSocial();
         SceneManager.LoadScene("tankwar");
     }
 
@@ -175,19 +160,17 @@ public class MainStage : MonoBehaviour
 
     public void onclickNextStage()
     {
-        GameObject.Find("NextStagePanel").SetActive(false);
+        NextStagePanel.SetActive(false);
         toNextStage();
     }
 
     public void toNextStage()
     {
-        GlobalControl.Instance.stage += 1;
-        GlobalControl.Instance.date = "2020/1/1";
-        GlobalControl.Instance.ddl = "2020/6/30";
+        GlobalControl.Instance.toNextStage();
         RefreshText();
     }
 
-    public void randomEvent(int ToDo, int Done)
+    public void randomEvent(int ToDo, int Done) //1学习2运动3社团4社交
     {
         int i = EventNum/2;
         while (i > 0)
@@ -205,17 +188,18 @@ public class MainStage : MonoBehaviour
                 && !(isBeginningOfTerm() == 0 && double.Parse(EventItem[17]) == 1) && !(isEndOfTerm() == 0 && double.Parse(EventItem[18]) == 1)
                 && (double.Parse(EventItem[19]) == 0 || ToDo == double.Parse(EventItem[19])) && (double.Parse(EventItem[20]) == 0 || Done == double.Parse(EventItem[20])))
             {
-                EventHappen(int.Parse(EventItem[0]));
+                EventHappen(EventItem[21], EventItem[22]);
+                break;
             }
+            i--;
         }
-
     }
 
     public void LoadEvents()
     {
         Events = EventsData.text.Split('\n');
         EventNum = Events.Length;
-        //Debug.Log("events loaded");
+        //Debug.Log(Events[0]);
     }
 
     public int isBeginningOfTerm()
@@ -228,9 +212,12 @@ public class MainStage : MonoBehaviour
         return 1;
     }
 
-    public void EventHappen(int ID)
+    public void EventHappen(string Title, string Contents)
     {
         EventPanel.SetActive(true);
+        GameObject.Find("EventName").GetComponent<Text>().text = Title;
+        GameObject.Find("Event").GetComponent<Text>().text = Contents;
+        Debug.Log("Event Happen");
     }
 
     public void BGMControl()
@@ -249,6 +236,8 @@ public class MainStage : MonoBehaviour
     public void FinalExam()
     {
         GlobalControl.Instance.IfNextStage = 1;
+        GlobalControl.Instance.ExamScore = 0;
+        Debug.Log(GlobalControl.Instance.IfNextStage);
         SceneManager.LoadScene("Examination");
     }
 

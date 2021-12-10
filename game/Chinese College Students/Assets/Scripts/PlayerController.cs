@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
 
-    public 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +40,6 @@ public class PlayerController : MonoBehaviour
     void SwitchAnim()
     {
         anim.SetFloat("speed", movement.magnitude);
-    }
-
-    void SwitchMap()
-    {
-
     }
 
 }

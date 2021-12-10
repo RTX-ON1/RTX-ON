@@ -35,6 +35,7 @@ public class MapCreation : MonoBehaviour
     private void Awake() 
     {
         InitMap();
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     private void InitMap()

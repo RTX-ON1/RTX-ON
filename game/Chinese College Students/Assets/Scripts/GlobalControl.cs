@@ -50,7 +50,23 @@ public class GlobalControl : MonoBehaviour
 
     public GlobalControl()
     {
+        date = "2019/09/01";
+        ddl = "2019/12/31";
+        FeijiClubScore = 0;
+        JitaClubScore = 0;
+        SocialScore = 0;
+        LearningScore = 0;
+        SportsScore = 0;
+        ClubTime = 0;
+        LearnTime = 0;
+        SocialTime = 0;
+        SportsTime = 0;
         FinalScore = new int[8];
+    }
+
+    public void Reset()
+    {
+        Instance = new GlobalControl();
     }
 
 }

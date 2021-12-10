@@ -22,23 +22,33 @@ public class MainStage : MonoBehaviour
     public int EventNum;
     public AudioSource BGM;
     public Slider BGMSlider;
+    public GameObject TutorialPanel;
 
     // Start is called before the first frame update
     void Start()
     {
         //Debug.Log("Start called");
         LoadEvents();
+        if (!PlayerPrefs.HasKey("MainStageTutorial"))
+        {
+            PlayerPrefs.SetInt("MainStageTutorial", 1);
+            TutorialPanel.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.anyKeyDown)
+        {
+            TutorialPanel.SetActive(false);
+        }
     }
 
     void OnEnable()
     {
         RefreshText();
+        setBGM();
         //Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
         if(Convert.ToDateTime(GlobalControl.Instance.date) == Convert.ToDateTime(GlobalControl.Instance.ddl))
@@ -65,7 +75,7 @@ public class MainStage : MonoBehaviour
         GlobalControl.Instance.date = "2019/09/01";
         GlobalControl.Instance.ddl = "2019/12/31";
         Text txt = DateText.GetComponent<Text>();
-        txt.text = GlobalControl.Instance.date + "\n距离ddl还有\n" + theDay2DDL();
+        txt.text = GlobalControl.Instance.date + "\n距离期末考试还有\n" + theDay2DDL();
         //Debug.Log("date text set");
 
     }
@@ -225,7 +235,8 @@ public class MainStage : MonoBehaviour
 
     public void BGMControl()
     {
-        BGM.volume = BGMSlider.value;
+        PlayerPrefs.SetFloat("BGMVolume", BGMSlider.value);
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     public void RefreshText()
@@ -239,6 +250,13 @@ public class MainStage : MonoBehaviour
     {
         GlobalControl.Instance.IfNextStage = 1;
         SceneManager.LoadScene("Examination");
+    }
+
+    public void setBGM()
+    {
+        if (PlayerPrefs.HasKey("BGMVolume"))
+            BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume");
+        else BGMSlider.value = 1;
     }
 
 }

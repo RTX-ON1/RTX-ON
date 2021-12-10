@@ -48,6 +48,8 @@ public class MapCreation : MonoBehaviour
         CreateItem(item[1],new Vector3(-1,-7,0),Quaternion.identity);
         CreateItem(item[1],new Vector3(0,-7,0),Quaternion.identity);
         CreateItem(item[1],new Vector3(1,-7,0),Quaternion.identity);
+        //实例化一个障碍在基地的上方，防止开局就游戏结束的情况
+        CreateItem(item[2],new Vector3(0,-4,0),Quaternion.identity);
 
         //实例化Bonus
         CreateBonus();
@@ -209,22 +211,35 @@ public class MapCreation : MonoBehaviour
     }
     private void destroyAllEnemy()
     {   
+        int ListCount = EnemyList1.Count;
         if (PlayerMananger.Instance.playerScore + 100*EnemyList1.Count >= 1500)
             {
                 GlobalControl.Instance.SocialScore += PlayerMananger.Instance.playerScore;
-                GlobalControl.Instance.SocialScore += 100*EnemyList1.Count;
-                SceneManager.LoadScene("Main Stage");
-                
+                GlobalControl.Instance.SocialScore += 100*ListCount;               
+                EnemyList1.Clear();
+                GameObject.Find("PlayerManager").GetComponent<PlayerMananger>().isWinUI.SetActive(true);
+                Invoke("ReturnToMenu",3f);
+                //PlayerMananger.ResetInterScore();
             }
-        for (int i = 0; i < EnemyList1.Count; i++)
-        {   
+        else 
+        {
+            for (int i = 0; i < ListCount; i++)
+            {   
             
-            PlayerMananger.Instance.playerScore += 100;
-            GlobalControl.Instance.SocialScore += 100;            
-            Instantiate(Explosion,EnemyList1[i].transform.localPosition,Quaternion.identity);
-            Destroy(EnemyList1[i]);            
+                PlayerMananger.Instance.playerScore += 100;
+                GlobalControl.Instance.SocialScore += 100;            
+                Instantiate(Explosion,EnemyList1[i].transform.localPosition,Quaternion.identity);
+                Destroy(EnemyList1[i]);            
             
+            }
+            EnemyList1.Clear();
         }
-        EnemyList1.Clear();
+        
     }
+    private void ReturnToMenu() //返回主界面
+    {
+        SceneManager.LoadScene("Main Stage");
+    }
+
+
 }

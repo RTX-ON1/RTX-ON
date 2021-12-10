@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Main Stage.unity
+=======
+- path: Assets/Scenes/tankwar.unity
+>>>>>>> 90085b55162f6bd0c59216f54e2b21e692a61447
   isLoaded: 1
   isActive: 1
   isSubScene: 0

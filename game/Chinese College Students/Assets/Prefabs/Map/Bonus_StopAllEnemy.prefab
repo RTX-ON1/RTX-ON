@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopTimeVal: 0
-  BonusStopAudio: {fileID: 8300000, guid: e39bcaef02f2e14419a07d07a31dc243, type: 3}
+  BonusStopAudio: {fileID: 8300000, guid: 31e707862b8923b49a3df5b1aec8dc94, type: 3}
 --- !u!82 &1284660469
 AudioSource:
   m_ObjectHideFlags: 0

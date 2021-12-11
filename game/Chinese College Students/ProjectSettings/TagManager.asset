@@ -13,6 +13,9 @@ TagManager:
   - Enemy
   - Tank
   - SpecialAirBarriar
+  - Bullet
+  - Monster
+  - DanJia
   layers:
   - Default
   - TransparentFX

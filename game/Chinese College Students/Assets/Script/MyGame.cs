@@ -12,16 +12,24 @@ public class MyGame : MonoBehaviour
 
     public Text timeText;
     private float gameTime=60; 
-    private bool gameOver;
+    public  bool gameOver;
     public GameObject gameOverPanel;
     public Text finalScoreText;
+    public GameObject TutorialPanel;
 
     Transform ui;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (!PlayerPrefs.HasKey("MainStageTutorial"))
+        {
+            PlayerPrefs.SetInt("MainStageTutorial", 1);
+            TutorialPanel.SetActive(true);
+        }
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
         Application.targetFrameRate = 60;
+
 
         //
         ui = GameObject.Find("Canvas").transform;
@@ -33,6 +41,10 @@ public class MyGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameOver)
+        {
+            return;
+        }
         gameTime-=Time.deltaTime;
         if(MyJet.isdestory)
         {
@@ -78,7 +90,7 @@ public class MyGame : MonoBehaviour
     }
     public void ReturnToMain()
     {
-        GlobalControl.Instance.FeijiClubScore= score;
+        GlobalControl.Instance.FeijiClubScore+= score;
         SceneManager.LoadScene("Main Stage");
     }
 }

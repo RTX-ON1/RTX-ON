@@ -13,7 +13,7 @@ public class MonsterCtrl : MonoBehaviour
     {
         // CreateMonster();
         // 反射机制
-        InvokeRepeating("CreateMonster", 0.1f, 2f);
+        InvokeRepeating("CreateMonster", 0.1f, 0.6f);
     }
 
     // Update is called once per frame
@@ -24,6 +24,9 @@ public class MonsterCtrl : MonoBehaviour
 
     void CreateMonster()
     {
+        if(GameObject.Find("游戏主控").GetComponent<MyGame>().gameOver){
+            return;
+        }
         float x = Random.Range(-2, 2);
         float y = 5;
         GameObject monster = Instantiate(monsterPrefab);

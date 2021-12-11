@@ -1,13 +1,9 @@
 sceneSetups:
 <<<<<<< HEAD
-- path: Assets/Scenes/Main Menu.unity
+- path: Assets/Scenes/Main Stage.unity
 =======
-<<<<<<< HEAD
-- path: Assets/Scenes/Plane Fight.unity
-=======
-- path: Assets/Scenes/Main Menu.unity
->>>>>>> 5a78b0d60da5d8e77277e745335c1b3cb6a48cfb
->>>>>>> 424fdad8225da000ecb31fad5e4088ef264e1370
+- path: Assets/Scenes/tankwar.unity
+>>>>>>> 90085b55162f6bd0c59216f54e2b21e692a61447
   isLoaded: 1
   isActive: 1
   isSubScene: 0

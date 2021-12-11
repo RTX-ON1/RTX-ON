@@ -104,9 +104,7 @@ public class MainStage : MonoBehaviour
 
     public void onclickMenu()
     {
-        if(MenuPanel.activeSelf == true)
-            MenuPanel.SetActive(false);
-        else MenuPanel.SetActive(true);
+        MenuPanel.SetActive(!MenuPanel.activeSelf);
     }
 
     public void onclickSprots()

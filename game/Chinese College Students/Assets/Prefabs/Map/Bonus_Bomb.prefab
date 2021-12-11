@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1737ff4988c678a45b41f77f4e68f54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBombActive: 0
+  BonusBombAudio: {fileID: 8300000, guid: 78ea59a2d35da144c983105394d01c64, type: 3}
 --- !u!61 &-7277162167261760107
 BoxCollider2D:
   m_ObjectHideFlags: 0

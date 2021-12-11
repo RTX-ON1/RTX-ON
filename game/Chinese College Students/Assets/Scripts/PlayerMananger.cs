@@ -109,7 +109,7 @@ public class PlayerMananger : MonoBehaviour
         SceneManager.LoadScene("Main Stage");
     }
 
-    private void ResetInterScore() //重置内部的得分函数
+    public void ResetInterScore() //重置内部的得分函数
     {
         playerScore = 0;
     }

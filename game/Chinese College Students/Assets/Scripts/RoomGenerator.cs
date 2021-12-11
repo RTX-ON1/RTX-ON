@@ -10,7 +10,7 @@ public class RoomGenerator : MonoBehaviour
     public enum Direction { up, down, left, right };
     public Direction direction;
     public Text timeText;
-    private float gameTime = 5;
+    private float gameTime = GlobalControl.Instance.SecondsForExam();
 
     [Header("房间信息")]
     public GameObject roomPrefab;
@@ -38,6 +38,7 @@ public class RoomGenerator : MonoBehaviour
     public Text finalScoreText;
     public int score;
     public bool gameOver;
+    public GameObject TutorialPanel;
 
     private int M_time;
 
@@ -70,6 +71,12 @@ public class RoomGenerator : MonoBehaviour
         endRoom.GetComponent<SpriteRenderer>().color = endColor;
         M_time = 0;
 
+        if (!PlayerPrefs.HasKey("ExaminationTutorial"))
+        {
+            PlayerPrefs.SetInt("ExaminationTutorial", 1);
+            TutorialPanel.SetActive(true);
+        }
+
     }
 
     // Update is called once per frame
@@ -80,10 +87,11 @@ public class RoomGenerator : MonoBehaviour
         {
             gameTime = 0;
             //显示我们的失败面板
-            //播放失败面板的动画
             gameOverPanel.SetActive(true);
+            score = GlobalControl.Instance.ToExamScore(GlobalControl.Instance.ExamScore);
             finalScoreText.text = score.ToString();
             gameOver = true;
+            GameObject.Find("Player").GetComponent<PlayerController>().speed = 0;
         }
         timeText.text = gameTime.ToString("0");
         if (Input.GetKey(KeyCode.M))
@@ -99,6 +107,10 @@ public class RoomGenerator : MonoBehaviour
             
         }
         M_time++;
+        if (Input.anyKeyDown)
+        {
+            TutorialPanel.SetActive(false);
+        }
     }
 
     public void ChangePointPos()

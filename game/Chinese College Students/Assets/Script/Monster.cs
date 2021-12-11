@@ -35,6 +35,9 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.Find("游戏主控").GetComponent<MyGame>().gameOver){
+            return;
+        }
         float dy = speed * Time.deltaTime;
         transform.Translate(0, -dy, 0);
 
@@ -55,7 +58,7 @@ public class Monster : MonoBehaviour
 
         // 头像的大小设为80px (宽度)
         float imgWidth = sprite.rect.width; // 图像的实际宽度
-        float scale = 320 / imgWidth; // 缩放比例
+        float scale = 240 / imgWidth; // 缩放比例
         animal.localScale = new Vector3(scale, scale, scale);
     }
 

@@ -22,6 +22,9 @@ public class BackgroundCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.Find("游戏主控").GetComponent<MyGame>().gameOver){
+            return;
+        }
         float dy = speed * Time.deltaTime;
         bg1.Translate(0, -dy, 0);
         bg2.Translate(0, -dy, 0);

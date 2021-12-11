@@ -24,6 +24,7 @@ public class LearningGameManager : MonoBehaviour
 
     //甜品预制体的字典，我们可以通过甜品的种类来得到对应的甜品游戏物体
     public Dictionary<SweetsType, GameObject> sweetPrefabDict;
+    public GameObject TutorialPanel;
 
     [System.Serializable]
     public struct SweetPrefab
@@ -95,6 +96,12 @@ public class LearningGameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
+        if (!PlayerPrefs.HasKey("MainStageTutorial"))
+        {
+            PlayerPrefs.SetInt("MainStageTutorial", 1);
+            TutorialPanel.SetActive(true);
+        }
         //字典的实例化
         sweetPrefabDict = new Dictionary<SweetsType, GameObject>();
         for (int i = 0; i < sweetPrefabs.Length; i++)
@@ -737,13 +744,17 @@ public class LearningGameManager : MonoBehaviour
 
     public void ReturnToMain()
     {
-        GlobalControl.Instance.LearningScore = playerScore;
+        GlobalControl.Instance.LearningScore += playerScore;
         SceneManager.LoadScene("Main Stage");
     }
 
     public void Replay()
     {
         SceneManager.LoadScene("Learning Game");
+    }
+    public void Help()
+    {
+        TutorialPanel.SetActive(true);
     }
 
     //清除行的方法

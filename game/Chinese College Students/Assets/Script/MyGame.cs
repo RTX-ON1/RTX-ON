@@ -90,7 +90,23 @@ public class MyGame : MonoBehaviour
     }
     public void ReturnToMain()
     {
-        GlobalControl.Instance.FeijiClubScore+= score;
+        int rank = 0;
+        if (score >= 400)
+        {
+            rank = 1;
+        }
+        else if (score >= 300)
+        {
+            rank = 2;
+        }
+        else if (score >=200)
+        {
+            rank = 3;
+        }
+        else rank = 4;
+
+        GlobalControl.Instance.FeijiClubScore+= GlobalControl.Instance.Cal_score(rank);
+        GlobalControl.Instance.ClubTime += 1;
         SceneManager.LoadScene("Main Stage");
     }
 }

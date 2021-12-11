@@ -77,14 +77,9 @@ public class Control : MonoBehaviour
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-        switch (playerrank)
-        {
-            case 1 : GlobalControl.Instance.SportsScore += 4; break;
-            case 2 : GlobalControl.Instance.SportsScore += 3; break;
-            case 3 : GlobalControl.Instance.SportsScore += 2; break;
-            case 4 : GlobalControl.Instance.SportsScore += 1; break;
+        GlobalControl.Instance.SportsTime += 1;
+        GlobalControl.Instance.SportsScore += GlobalControl.Instance.Cal_score(playerrank);
 
-        }
     }
 
     private void Rank(float playerTime)
@@ -101,7 +96,7 @@ public class Control : MonoBehaviour
             EndPanel.SetActive(true);
             playerrank = 2;
         }
-        else if(playerTime < 8)
+        else if(playerTime < 9)
         {
             EndText.text = "你的得分为\nC\n还可以更快一点";
             EndPanel.SetActive(true);

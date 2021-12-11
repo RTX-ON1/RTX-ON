@@ -227,7 +227,7 @@ public class MapCreation : MonoBehaviour
             {   
             
                 PlayerMananger.Instance.playerScore += 100;
-                GlobalControl.Instance.SocialScore += 100;            
+                ;           
                 Instantiate(Explosion,EnemyList1[i].transform.localPosition,Quaternion.identity);
                 Destroy(EnemyList1[i]);            
             

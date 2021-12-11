@@ -160,5 +160,23 @@ public class GlobalControl : MonoBehaviour
     {
         return 10;
     }
+    public int Cal_score(int rank )
+    {
+        int score = 0;
+        if (rank == 1)
+        {
+            score = 100;
+        }
+        else if (rank == 2)
+        {
+            score = 80;
+        }
+        else if (rank == 3)
+        {
+            score = 60;
+        }
+        else score = 50;
 
+        return score;
+    }
 }

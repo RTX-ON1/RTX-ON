@@ -83,7 +83,7 @@ public class MainStage : MonoBehaviour
     {
 
         Text txt = ActText.GetComponent<Text>();
-        txt.text = "社团：\n\t动漫社：" + GlobalControl.Instance.FeijiClubScore.ToString() + "\n\t吉他社：" + GlobalControl.Instance.JitaClubScore.ToString() + "\n社交：\n\t李浩民：" + GlobalControl.Instance.SocialScore.ToString();
+        txt.text = "社团：\n\t飞机社：" + GlobalControl.Instance.FeijiClubScore.ToString()  + "\n\t次数: " + GlobalControl.Instance.ClubTime.ToString() + "\n社交：\n\t李浩民：" + GlobalControl.Instance.SocialScore.ToString() + "\n\t次数：" + GlobalControl.Instance.SocialTime.ToString();
         //Debug.Log("act text set");
 
     }
@@ -91,7 +91,7 @@ public class MainStage : MonoBehaviour
     public void setStudyText()
     {
         Text txt = StudyText.GetComponent<Text>();
-        txt.text = "学习：\n\t分数：" + GlobalControl.Instance.LearningScore.ToString() + "\n\t时间：" + GlobalControl.Instance.LearnTime.ToString() + "\n体育：\n\t分数：" + GlobalControl.Instance.SportsScore.ToString();
+        txt.text = "\t学习：" + GlobalControl.Instance.LearningScore.ToString() + "\n\t次数：" + GlobalControl.Instance.LearnTime.ToString() + "\n\n\t体育：" + GlobalControl.Instance.SportsScore.ToString() + "\n\t次数：" + GlobalControl.Instance.SportsTime.ToString();
         //Debug.Log("study text set");
 
     }

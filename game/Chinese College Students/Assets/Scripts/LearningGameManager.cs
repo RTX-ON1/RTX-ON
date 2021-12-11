@@ -744,7 +744,22 @@ public class LearningGameManager : MonoBehaviour
 
     public void ReturnToMain()
     {
-        GlobalControl.Instance.LearningScore += playerScore;
+        int rank = 0;
+        if(playerScore >=200)
+        {
+            rank = 1;
+        }
+        else if(playerScore >= 180)
+        {
+            rank = 2;
+        }
+        else if (playerScore >=150)
+        {
+            rank=3;
+        }
+        else rank = 4;
+        GlobalControl.Instance.LearningScore += GlobalControl.Instance.Cal_score(rank);
+        GlobalControl.Instance.LearnTime += 1;
         SceneManager.LoadScene("Main Stage");
     }
 

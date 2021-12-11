@@ -84,12 +84,8 @@ public class Pointer_LR : MonoBehaviour
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-        switch (playerrank)
-        {
-            case 1 : GlobalControl.Instance.SportsScore += 4; break;
-            case 2 : GlobalControl.Instance.SportsScore += 3; break;
-            case 3 : GlobalControl.Instance.SportsScore += 2; break;
-            case 4 : GlobalControl.Instance.SportsScore += 1; break;
-        }
+        GlobalControl.Instance.SportsTime += 1;
+        GlobalControl.Instance.SportsScore += GlobalControl.Instance.Cal_score(playerrank);
+
     }
 }

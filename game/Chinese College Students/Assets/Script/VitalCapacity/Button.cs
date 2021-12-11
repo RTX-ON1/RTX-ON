@@ -50,19 +50,19 @@ public class Button : MonoBehaviour
 
     private void Rank(int PlayerScore)
     {
-        if(PlayerScore >= 5000 )
+        if(PlayerScore >= 4900 )
         {
             EndText.text = "你的得分为\nA\n您就是大肺王";
             EndPanel.SetActive(true);
             playerrank = 1;
         }
-        else if(PlayerScore >= 4700)
+        else if(PlayerScore >= 4400)
         {
             EndText.text = "你的得分为\nB\n肺活量超人";
             EndPanel.SetActive(true);
             playerrank = 2;
         }
-        else if(PlayerScore >= 4500)
+        else if(PlayerScore >= 3200)
         {
             EndText.text = "你的得分为\nC\n请勤加锻炼";
             EndPanel.SetActive(true);
@@ -79,12 +79,8 @@ public class Button : MonoBehaviour
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-        switch (playerrank)
-        {
-            case 1 : GlobalControl.Instance.SportsScore += 4; break;
-            case 2 : GlobalControl.Instance.SportsScore += 3; break;
-            case 3 : GlobalControl.Instance.SportsScore += 2; break;
-            case 4 : GlobalControl.Instance.SportsScore += 1; break;
-        }
+        GlobalControl.Instance.SportsTime += 1;
+        GlobalControl.Instance.SportsScore += GlobalControl.Instance.Cal_score(playerrank);
+
     }
 }

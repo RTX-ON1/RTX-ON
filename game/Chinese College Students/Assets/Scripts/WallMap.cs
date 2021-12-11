@@ -17,7 +17,11 @@ public class WallMap : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            mapSprite.SetActive(true);
+            if (!mapSprite.activeSelf)
+            {
+                mapSprite.SetActive(true);
+                GlobalControl.Instance.ExamScore += 1;
+            }
         }
     }
 }

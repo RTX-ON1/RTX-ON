@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapCreation : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class MapCreation : MonoBehaviour
     private void Awake() 
     {
         InitMap();
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     private void InitMap()
@@ -46,6 +48,8 @@ public class MapCreation : MonoBehaviour
         CreateItem(item[1],new Vector3(-1,-7,0),Quaternion.identity);
         CreateItem(item[1],new Vector3(0,-7,0),Quaternion.identity);
         CreateItem(item[1],new Vector3(1,-7,0),Quaternion.identity);
+        //实例化一个障碍在基地的上方，防止开局就游戏结束的情况
+        CreateItem(item[2],new Vector3(0,-4,0),Quaternion.identity);
 
         //实例化Bonus
         CreateBonus();
@@ -142,8 +146,6 @@ public class MapCreation : MonoBehaviour
     private void CreateEnemy()
     {   
         
-
-
         int tempnum = Random.Range(0,2);
         if (tempnum==0)
         {
@@ -164,7 +166,7 @@ public class MapCreation : MonoBehaviour
             GameObject go = Instantiate(item[11],EnemyPos,Quaternion.identity);
             EnemyList1.Add(go);
         }
-        else
+        else if (tempnum == 1)       
         {   
             int num = Random.Range(0,3);
             Vector3 EnemyPos = new Vector3();
@@ -208,14 +210,36 @@ public class MapCreation : MonoBehaviour
         
     }
     private void destroyAllEnemy()
-    {
-        for (int i = 0; i < EnemyList1.Count; i++)
-        {   
-            PlayerMananger.Instance.playerScore = PlayerMananger.Instance.playerScore + 100;
-            Instantiate(Explosion,EnemyList1[i].transform.localPosition,Quaternion.identity);
-            Destroy(EnemyList1[i]);            
+    {   
+        int ListCount = EnemyList1.Count;
+        if (PlayerMananger.Instance.playerScore + 100*EnemyList1.Count >= 1500)
+            {
+                GlobalControl.Instance.SocialScore += PlayerMananger.Instance.playerScore;
+                GlobalControl.Instance.SocialScore += 100*ListCount;               
+                EnemyList1.Clear();
+                GameObject.Find("PlayerManager").GetComponent<PlayerMananger>().isWinUI.SetActive(true);
+                Invoke("ReturnToMenu",3f);
+                //PlayerMananger.ResetInterScore();
+            }
+        else 
+        {
+            for (int i = 0; i < ListCount; i++)
+            {   
             
+                PlayerMananger.Instance.playerScore += 100;
+                GlobalControl.Instance.SocialScore += 100;            
+                Instantiate(Explosion,EnemyList1[i].transform.localPosition,Quaternion.identity);
+                Destroy(EnemyList1[i]);            
+            
+            }
+            EnemyList1.Clear();
         }
-        EnemyList1.Clear();
+        
     }
+    private void ReturnToMenu() //返回主界面
+    {
+        SceneManager.LoadScene("Main Stage");
+    }
+
+
 }

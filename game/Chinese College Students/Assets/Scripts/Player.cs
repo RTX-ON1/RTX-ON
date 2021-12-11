@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate() 
     {   
+        move();
         if (PlayerMananger.Instance.isDefeat == true)
         {
             return;
@@ -65,7 +66,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        move();
+        
         if (timeVal>=0.4f)
         {
             Attack();

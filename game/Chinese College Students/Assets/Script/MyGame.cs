@@ -22,9 +22,9 @@ public class MyGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!PlayerPrefs.HasKey("MainStageTutorial"))
+        if (!PlayerPrefs.HasKey("FlightTutorial"))
         {
-            PlayerPrefs.SetInt("MainStageTutorial", 1);
+            PlayerPrefs.SetInt("FlightTutorial", 1);
             TutorialPanel.SetActive(true);
         }
         GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
@@ -63,6 +63,10 @@ public class MyGame : MonoBehaviour
             gameOver = true;
         }
         timeText.text=gameTime.ToString("0");
+        if (Input.anyKeyDown)
+        {
+            TutorialPanel.SetActive(false);
+        }
 
     }
 

@@ -25,7 +25,7 @@ public class Pointer_PS : MonoBehaviour
     
     void Start()
     {
-        
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     // Update is called once per frame

@@ -20,6 +20,7 @@ public class Pointer_LR : MonoBehaviour
     {
         // Debug.Log(degreesPersecond);
         startpos = transform.position;
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     // Update is called once per frame

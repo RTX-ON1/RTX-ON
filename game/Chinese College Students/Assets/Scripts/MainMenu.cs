@@ -83,10 +83,13 @@ public class MainMenu : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
             File.Delete(Application.persistentDataPath + "/gamesave.save");
+            PlayerPrefs.DeleteKey("MainStageTutorial");
+            PlayerPrefs.DeleteKey("ExaminationTutorial");
+            PlayerPrefs.DeleteKey("FlightTutorial");
+            PlayerPrefs.DeleteKey("LearningGameTutorial");
             Debug.Log("É¾³ý³É¹¦");
             GlobalControl.Instance.Reset();
             LoadGamePanel.SetActive(false);
-
         }
         else
         {

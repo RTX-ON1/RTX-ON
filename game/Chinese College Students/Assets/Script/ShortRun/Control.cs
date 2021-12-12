@@ -24,6 +24,7 @@ public class Control : MonoBehaviour
         // Debug.Log(flag);
         playerTime = 0;
         deltatime = Time.time;
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     // Update is called once per frame
@@ -57,7 +58,7 @@ public class Control : MonoBehaviour
         //游戏结束条件
         if(Time.time >= deltatime)
         {
-          if(count == 0)
+          if(count <= 0)
             {
                 flag = -1;
                 left.SetActive(false);

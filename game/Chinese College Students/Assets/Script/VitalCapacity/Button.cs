@@ -19,6 +19,7 @@ public class Button : MonoBehaviour
     void Start()
     {
         deltatime = Time.time;
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     // Update is called once per frame

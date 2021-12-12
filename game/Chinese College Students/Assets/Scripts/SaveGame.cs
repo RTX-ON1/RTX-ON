@@ -34,6 +34,10 @@ public class SaveGame : MonoBehaviour
         save.LearnTime = GlobalControl.Instance.LearnTime;
         save.SocialTime = GlobalControl.Instance.SocialTime;
         save.SportsTime = GlobalControl.Instance.SportsTime;
+        for(int i = 0; i < 8; i++)
+        {
+            save.FinalScore[i] = GlobalControl.Instance.FinalScore[i];
+        }
         return save;
     }
 
@@ -71,6 +75,10 @@ public class SaveGame : MonoBehaviour
             GlobalControl.Instance.LearnTime = save.LearnTime;
             GlobalControl.Instance.SocialTime = save.SocialTime;
             GlobalControl.Instance.SportsTime = save.SportsTime;
+            for(int i = 0; i < 8; i++)
+            {
+                GlobalControl.Instance.FinalScore[i] = save.FinalScore[i];
+            }
 
             Debug.Log("¶ÁµµÍê³É");
         }

@@ -45,7 +45,7 @@ public class RoomGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
         for (int i = 0; i < roomNumber; i++)
         {
             rooms.Add(Instantiate(roomPrefab, generatorPoint.position, Quaternion.identity).GetComponent<Room>());
@@ -231,7 +231,7 @@ public class RoomGenerator : MonoBehaviour
 
     public void BackToMain()
     {
-        GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage] = score;
+        GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage - 1] = score;
         SceneManager.LoadScene("Main Stage");
     }
 

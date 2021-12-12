@@ -34,12 +34,13 @@ public class GlobalControl : MonoBehaviour
     // 不需要保存的数据
     public int IfNextStage = 0;
     private string[] startDate = new string[] { "2019/09/02", "2020/03/02", "2020/09/07", "2020/03/01", "2021/09/06", "2022/02/28", "2022/09/05", "2023/03/06" };
-    private string[] endDate = new string[] { "2020/01/03", "2020/07/03", "2021/01/08", "2020/07/02", "2022/01/07", "2022/07/01", "2023/01/06", "2023/07/07" };
+    private string[] endDate = new string[] { "2020/01/03", "2020/07/03", "2021/01/08", "2021/07/02", "2022/01/07", "2022/07/01", "2023/01/06", "2023/07/07" };
     private int learningDaySpan = 5;
     private int sportsDaySpan = 5;
     private int socialDaySpan = 5;
     private int clubDaySpan = 5;
     public int ExamScore = 0;
+    public int DoingID = 0;
 
     //初始化
     private void Awake()
@@ -59,7 +60,7 @@ public class GlobalControl : MonoBehaviour
     {
 
         startDate = new string[] { "2019/09/02", "2020/03/02", "2020/09/07", "2021/03/01", "2021/09/06", "2022/02/28", "2022/09/05", "2023/03/06" };
-        endDate = new string[] {"2020/01/03", "2020/07/03", "2021/01/08", "2020/07/02", "2022/01/07", "2022/07/01", "2023/01/06", "2023/07/07"};
+        endDate = new string[] {"2020/01/03", "2020/07/03", "2021/01/08", "2021/07/02", "2022/01/07", "2022/07/01", "2023/01/06", "2023/07/07"};
         stage = 1;
         date = startDate[stage - 1];
         ddl = endDate[stage - 1];
@@ -74,17 +75,31 @@ public class GlobalControl : MonoBehaviour
         SportsTime = 0;
         FinalScore = new int[8];
         IfNextStage = 0;
-        learningDaySpan = 5;
+        learningDaySpan = 120;
         sportsDaySpan = 5;
         socialDaySpan = 5;
         clubDaySpan = 5;
         ExamScore = 0;
+        DoingID = 0;
 
     }
 
     public void Reset()
     {
-        Instance = new GlobalControl();
+        Instance.stage = 1;
+        Instance.date = Instance.startDate[stage - 1];
+        Instance.ddl = Instance.endDate[stage - 1];
+        Instance.FeijiClubScore = 0;
+        Instance.JitaClubScore = 0;
+        Instance.SocialScore = 0;
+        Instance.LearningScore = 0;
+        Instance.SportsScore = 0;
+        Instance.SocialScore = 0;
+        Instance.ClubTime = 0;
+        Instance.LearnTime = 0;
+        Instance.SocialTime = 0;
+        Instance.SportsTime = 0;
+        Instance.FinalScore = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
     }
 
     public int theDay2DDL()
@@ -158,7 +173,7 @@ public class GlobalControl : MonoBehaviour
 
     public int SecondsForExam()
     {
-        return 10;
+        return 3;
     }
     public int Cal_score(int rank )
     {

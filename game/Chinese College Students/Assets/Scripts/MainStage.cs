@@ -24,6 +24,8 @@ public class MainStage : MonoBehaviour
     public Slider BGMSlider;
     public GameObject TutorialPanel;
     public GameObject NextStagePanel;
+    public GameObject EndGamePanel;
+    public AudioSource EndingBGM;
 
     // Start is called before the first frame update
     void Start()
@@ -58,9 +60,16 @@ public class MainStage : MonoBehaviour
         }
         if(GlobalControl.Instance.IfNextStage == 1)
         {
-            GlobalControl.Instance.IfNextStage = 0;
-            NextStagePanel.SetActive(true);
-            GameObject.Find("FinalExamScoreText").GetComponent<Text>().text = "这次期末考了" + GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage].ToString() + "分";
+            if(GlobalControl.Instance.stage < 8)
+            {
+                GlobalControl.Instance.IfNextStage = 0;
+                NextStagePanel.SetActive(true);
+                GameObject.Find("FinalExamScoreText").GetComponent<Text>().text = "这次期末考了" + GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage - 1].ToString() + "分";
+            }
+            else if(GlobalControl.Instance.stage == 8)
+            {
+                EndGame();
+            }
         }
     }
 
@@ -96,6 +105,28 @@ public class MainStage : MonoBehaviour
 
     }
 
+    public void onclickMapBtns(int id) //1学习2运动3社团4社交
+    {
+        if (!randomEvent(id, 0))
+        {
+            switch (id)
+            {
+                case 1:
+                    onclickLearn();
+                    break;
+                case 2:
+                    onclickSprots();
+                    break;
+                case 3:
+                    onclickClub();
+                    break;
+                case 4:
+                    onclickSocial();
+                    break;
+            }
+        }
+    }
+
     public void onclickMap()
     {
         if(GlobalControl.Instance.theDay2DDL() >= 5)
@@ -123,7 +154,6 @@ public class MainStage : MonoBehaviour
 
     public void onclickLearn()
     {
-        randomEvent(1, 0);
         GlobalControl.Instance.DayPassLearn();
         SceneManager.LoadScene("Learning Game");
     }
@@ -150,6 +180,30 @@ public class MainStage : MonoBehaviour
         MenuPanel.SetActive(false);
     }
 
+    public void onclickCloseEvent() //1学习2运动3社团4社交
+    {
+        int id = GlobalControl.Instance.DoingID;
+        GlobalControl.Instance.DoingID = 0;
+        switch (id)
+        {
+            case 0:
+                EventPanel.SetActive(false);
+                break;
+            case 1:
+                onclickLearn();
+                break;
+            case 2:
+                onclickSprots();
+                break;
+            case 3:
+                onclickClub();
+                break;
+            case 4:
+                onclickSocial();
+                break;
+        }
+    }
+
     public void onclickExit()
     {
         GameObject.Find("Canvas").GetComponent<SaveGame>().SaveGameFunc();
@@ -158,8 +212,16 @@ public class MainStage : MonoBehaviour
 
     public void onclickNextStage()
     {
-        NextStagePanel.SetActive(false);
-        toNextStage();
+        if(GlobalControl.Instance.stage < 8)
+        {
+            FinalExamPanel.SetActive(false);
+            NextStagePanel.SetActive(false);
+            toNextStage();
+        }
+        else
+        {
+            EndGamePanel.SetActive(true);
+        }
     }
 
     public void toNextStage()
@@ -168,8 +230,9 @@ public class MainStage : MonoBehaviour
         RefreshText();
     }
 
-    public void randomEvent(int ToDo, int Done) //1学习2运动3社团4社交
+    public bool randomEvent(int ToDo, int Done) //1学习2运动3社团4社交
     {
+        bool flag = false;
         int i = EventNum/2;
         while (i > 0)
         {
@@ -186,11 +249,14 @@ public class MainStage : MonoBehaviour
                 && !(isBeginningOfTerm() == 0 && double.Parse(EventItem[17]) == 1) && !(isEndOfTerm() == 0 && double.Parse(EventItem[18]) == 1)
                 && (double.Parse(EventItem[19]) == 0 || ToDo == double.Parse(EventItem[19])) && (double.Parse(EventItem[20]) == 0 || Done == double.Parse(EventItem[20])))
             {
+                flag = true;
+                GlobalControl.Instance.DoingID = ToDo;
                 EventHappen(EventItem[21], EventItem[22]);
                 break;
             }
             i--;
         }
+        return flag;
     }
 
     public void LoadEvents()
@@ -221,7 +287,8 @@ public class MainStage : MonoBehaviour
     public void BGMControl()
     {
         PlayerPrefs.SetFloat("BGMVolume", BGMSlider.value);
-        GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
+        BGM.volume = PlayerPrefs.GetFloat("BGMVolume");
+        EndingBGM.volume = PlayerPrefs.GetFloat("BGMVolume");
     }
 
     public void RefreshText()
@@ -233,10 +300,13 @@ public class MainStage : MonoBehaviour
 
     public void FinalExam()
     {
-        GlobalControl.Instance.IfNextStage = 1;
-        GlobalControl.Instance.ExamScore = 0;
-        Debug.Log(GlobalControl.Instance.IfNextStage);
-        SceneManager.LoadScene("Examination");
+        if (!NextStagePanel.activeSelf)
+        {
+            GlobalControl.Instance.IfNextStage = 1;
+            GlobalControl.Instance.ExamScore = 0;
+            //Debug.Log(GlobalControl.Instance.IfNextStage);
+            SceneManager.LoadScene("Examination");
+        }
     }
 
     public void setBGM()
@@ -244,6 +314,23 @@ public class MainStage : MonoBehaviour
         if (PlayerPrefs.HasKey("BGMVolume"))
             BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume");
         else BGMSlider.value = 1;
+    }
+
+    public void EndGame()
+    {
+        BGM.Stop();
+        EndingBGM.Play();
+        GlobalControl.Instance.IfNextStage = 0;
+        NextStagePanel.SetActive(true);
+        GameObject.Find("FinalExamScoreText").GetComponent<Text>().text = "毕业论文得了" + GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage - 1].ToString() + "分";
+        GameObject.Find("NextStageText").GetComponent<Text>().text = "结束大学四年";
+    }
+
+    public void onclickRemake()
+    {
+        GlobalControl.Instance.Reset();
+        GlobalControl.Instance.generation++;
+        SceneManager.LoadScene("Main Stage");
     }
 
 }

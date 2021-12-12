@@ -97,9 +97,9 @@ public class LearningGameManager : MonoBehaviour
     void Start()
     {
         GameObject.Find("BGM").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("BGMVolume");
-        if (!PlayerPrefs.HasKey("MainStageTutorial"))
+        if (!PlayerPrefs.HasKey("LearningGameTutorial"))
         {
-            PlayerPrefs.SetInt("MainStageTutorial", 1);
+            PlayerPrefs.SetInt("LearningGameTutorial", 1);
             TutorialPanel.SetActive(true);
         }
         //字典的实例化

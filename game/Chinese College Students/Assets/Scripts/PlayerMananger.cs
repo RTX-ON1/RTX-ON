@@ -58,7 +58,8 @@ public class PlayerMananger : MonoBehaviour
         if (isDefeat)
         {
             isDefeatUI.SetActive(true);
-            GlobalControl.Instance.SocialScore -= 500;
+            GlobalControl.Instance.SocialScore += 50;
+            GlobalControl.Instance.SocialTime += 1;
             isDefeat = false;
             Invoke("ReturnToMenu",2);
             ResetInterScore();           
@@ -71,7 +72,8 @@ public class PlayerMananger : MonoBehaviour
         if (isWin)
         {
             isWinUI.SetActive(true);
-            GlobalControl.Instance.SocialScore += 1500;
+            GlobalControl.Instance.SocialScore += 100;
+            GlobalControl.Instance.SocialTime += 1;
             isWin = false;
             Invoke("ReturnToMenu",3);
             ResetInterScore();

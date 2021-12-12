@@ -52,19 +52,19 @@ public class Pointer_PS : MonoBehaviour
 
     private void Rank(int playerScore)
     {
-        if(playerScore > 25)
+        if(playerScore > 18)
         {
             EndText.text = "你的得分为\nA\n健身大神说的就是你";
             EndPannel.SetActive(true);
             playerrank = 1;
         }
-        else if(playerScore > 20)
+        else if(playerScore > 16)
         {
             EndText.text = "你的得分为\nB\n超出常人的力量";
             EndPannel.SetActive(true);
             playerrank = 2;
         }
-        else if(playerScore > 15)
+        else if(playerScore > 11)
         {
             EndText.text = "你的得分为\nC\n体质健硕";
             EndPannel.SetActive(true);
@@ -80,13 +80,9 @@ public class Pointer_PS : MonoBehaviour
     private void ExitGame()
     {
         SceneManager.LoadScene("Main Stage");
-        switch (playerrank)
-        {
-            case 1 : GlobalControl.Instance.SportsScore += 4; break;
-            case 2 : GlobalControl.Instance.SportsScore += 3; break;
-            case 3 : GlobalControl.Instance.SportsScore += 2; break;
-            case 4 : GlobalControl.Instance.SportsScore += 1; break;
-        }
+        GlobalControl.Instance.SportsTime += 1;
+        GlobalControl.Instance.SportsScore += GlobalControl.Instance.Cal_score(playerrank);
+
     }
     private void OnTriggerStay(Collider other)
     {

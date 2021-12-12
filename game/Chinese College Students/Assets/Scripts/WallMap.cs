@@ -20,7 +20,7 @@ public class WallMap : MonoBehaviour
             if (!mapSprite.activeSelf)
             {
                 mapSprite.SetActive(true);
-                GlobalControl.Instance.ExamScore += 1;
+                GlobalControl.Instance.ExamScore += 10;
             }
         }
     }

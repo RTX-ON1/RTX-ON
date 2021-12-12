@@ -20,6 +20,10 @@ public class PlaneDanJia : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameObject.Find("游戏主控").GetComponent<MyGame>().gameOver){
+            return;
+        }
+        else{
         float dy = speed * Time.deltaTime;
         transform.Translate(0, -dy, 0);
 
@@ -27,7 +31,7 @@ public class PlaneDanJia : MonoBehaviour
         if (sp.y < 0)
         {
             Destroy(this.gameObject);
-        }
+        }}
     }
 
 

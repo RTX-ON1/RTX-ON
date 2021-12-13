@@ -13,7 +13,7 @@ public class MonsterCtrl : MonoBehaviour
     {
         // CreateMonster();
         // 反射机制
-        InvokeRepeating("CreateMonster", 0.1f, 0.6f);
+        InvokeRepeating("CreateMonster", 0.4f, 0.6f);
     }
 
     // Update is called once per frame

@@ -30,12 +30,13 @@ public class GlobalControl : MonoBehaviour
     public int SocialTime = 0;
     public int SportsTime = 0;
     public int[] FinalScore = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] Learnscore_perStage = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
 
     // 不需要保存的数据
     public int IfNextStage = 0;
     private string[] startDate = new string[] { "2019/09/02", "2020/03/02", "2020/09/07", "2020/03/01", "2021/09/06", "2022/02/28", "2022/09/05", "2023/03/06" };
     private string[] endDate = new string[] { "2020/01/03", "2020/07/03", "2021/01/08", "2021/07/02", "2022/01/07", "2022/07/01", "2023/01/06", "2023/07/07" };
-    private int learningDaySpan = 5;
+    private int learningDaySpan = 112;
     private int sportsDaySpan = 5;
     private int socialDaySpan = 5;
     private int clubDaySpan = 5;
@@ -74,11 +75,12 @@ public class GlobalControl : MonoBehaviour
         SocialTime = 0;
         SportsTime = 0;
         FinalScore = new int[8];
+        Learnscore_perStage = new int[8];
         IfNextStage = 0;
-        learningDaySpan = 120;
-        sportsDaySpan = 5;
-        socialDaySpan = 5;
-        clubDaySpan = 5;
+        learningDaySpan = 7;
+        sportsDaySpan = 7;
+        socialDaySpan = 7;
+        clubDaySpan = 7;
         ExamScore = 0;
         DoingID = 0;
 
@@ -107,7 +109,7 @@ public class GlobalControl : MonoBehaviour
         DateTime ddl = Convert.ToDateTime(Instance.ddl);
         DateTime now = Convert.ToDateTime(Instance.date);
         TimeSpan span = ddl - now;
-        int days = span.Days;
+        int days = span.Days - 7;
         return days;
     }
 
@@ -173,7 +175,7 @@ public class GlobalControl : MonoBehaviour
 
     public int SecondsForExam()
     {
-        return 3;
+        return GlobalControl.Instance.Learnscore_perStage[stage - 1]/20;
     }
     public int Cal_score(int rank )
     {

@@ -54,7 +54,7 @@ public class MainStage : MonoBehaviour
         setBGM();
         //Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
-        if(GlobalControl.Instance.theDay2DDL() < 5)
+        if(GlobalControl.Instance.theDay2DDL() < 7)
         {
             FinalExamPanel.SetActive(true);
         }

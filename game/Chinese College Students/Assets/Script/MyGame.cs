@@ -95,15 +95,15 @@ public class MyGame : MonoBehaviour
     public void ReturnToMain()
     {
         int rank = 0;
-        if (score >= 400)
+        if (score >= 300)
         {
             rank = 1;
         }
-        else if (score >= 300)
+        else if (score >= 200)
         {
             rank = 2;
         }
-        else if (score >=200)
+        else if (score >=100)
         {
             rank = 3;
         }

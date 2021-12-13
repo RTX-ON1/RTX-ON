@@ -33,7 +33,7 @@ public class PlayerMananger : MonoBehaviour
         {
              return instance;
         }
-
+         
         set
         {
             instance = value;
@@ -56,13 +56,11 @@ public class PlayerMananger : MonoBehaviour
     {   
         DecideWin();
         if (isDefeat)
-        {
-            isDefeatUI.SetActive(true);
-            GlobalControl.Instance.SocialScore += 50;
-            GlobalControl.Instance.SocialTime += 1;
-            isDefeat = false;
+        {   
             Invoke("ReturnToMenu",2);
-            ResetInterScore();           
+            isDefeatUI.SetActive(true);
+            isDefeat = false;
+                       
             return;
         }
         if (isDead)
@@ -70,13 +68,10 @@ public class PlayerMananger : MonoBehaviour
             Recover();
         }
         if (isWin)
-        {
-            isWinUI.SetActive(true);
-            GlobalControl.Instance.SocialScore += 100;
-            GlobalControl.Instance.SocialTime += 1;
-            isWin = false;
+        {            
             Invoke("ReturnToMenu",3);
-            ResetInterScore();
+            isWinUI.SetActive(true);
+            isWin = false;
             return;
         }
         playerScoreText.text = playerScore.ToString();
@@ -101,18 +96,33 @@ public class PlayerMananger : MonoBehaviour
     }
     private void DecideWin() //判断胜利的条件
     {
-        if (playerScore>=1500)
+        if (playerScore >= 1500)
         {
-            isWin = true;                        
+            isWin = true;
         }
     }
     private void ReturnToMenu() //返回主界面
-    {
+    {   if(playerScore >= 1500)
+        {
+            GlobalControl.Instance.SocialScore += GlobalControl.Instance.Cal_score(1);
+        }
+        else if(playerScore >= 1000)
+        { 
+            GlobalControl.Instance.SocialScore += GlobalControl.Instance.Cal_score(2);
+        }
+        else if (playerScore >= 500)
+        {
+            GlobalControl.Instance.SocialScore += GlobalControl.Instance.Cal_score(3);
+        }
+        else GlobalControl.Instance.SocialScore += GlobalControl.Instance.Cal_score(4);
+
+        GlobalControl.Instance.SocialTime += 1;
+        ResetInterScore();
         SceneManager.LoadScene("Main Stage");
     }
 
     public void ResetInterScore() //重置内部的得分函数
-    {
+    {   
         playerScore = 0;
     }
 }

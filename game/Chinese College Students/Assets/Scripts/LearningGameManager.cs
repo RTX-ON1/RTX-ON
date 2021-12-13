@@ -745,11 +745,11 @@ public class LearningGameManager : MonoBehaviour
     public void ReturnToMain()
     {
         int rank = 0;
-        if(playerScore >=200)
+        if(playerScore >=250)
         {
             rank = 1;
         }
-        else if(playerScore >= 180)
+        else if(playerScore >= 200)
         {
             rank = 2;
         }
@@ -760,6 +760,7 @@ public class LearningGameManager : MonoBehaviour
         else rank = 4;
         GlobalControl.Instance.LearningScore += GlobalControl.Instance.Cal_score(rank);
         GlobalControl.Instance.LearnTime += 1;
+        GlobalControl.Instance.Learnscore_perStage[GlobalControl.Instance.stage - 1] += GlobalControl.Instance.Cal_score(rank); 
         SceneManager.LoadScene("Main Stage");
     }
 

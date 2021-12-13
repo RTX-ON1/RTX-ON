@@ -213,9 +213,7 @@ public class MapCreation : MonoBehaviour
     {   
         int ListCount = EnemyList1.Count;
         if (PlayerMananger.Instance.playerScore + 100*EnemyList1.Count >= 1500)
-            {
-                GlobalControl.Instance.SocialScore += PlayerMananger.Instance.playerScore;
-                GlobalControl.Instance.SocialScore += 100*ListCount;               
+            {          
                 EnemyList1.Clear();
                 GameObject.Find("PlayerManager").GetComponent<PlayerMananger>().isWinUI.SetActive(true);
                 Invoke("ReturnToMenu",3f);

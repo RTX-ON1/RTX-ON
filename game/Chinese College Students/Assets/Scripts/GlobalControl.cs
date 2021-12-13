@@ -175,7 +175,7 @@ public class GlobalControl : MonoBehaviour
 
     public int SecondsForExam()
     {
-        return GlobalControl.Instance.Learnscore_perStage[stage - 1]/20;
+        return GlobalControl.Instance.Learnscore_perStage[stage - 1]/8;
     }
     public int Cal_score(int rank )
     {

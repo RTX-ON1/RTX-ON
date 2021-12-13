@@ -231,7 +231,7 @@ public class RoomGenerator : MonoBehaviour
 
     public void BackToMain()
     {
-        GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage - 1] = score;
+        GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage - 1] = 100 * score/(score + 20);
         SceneManager.LoadScene("Main Stage");
     }
 

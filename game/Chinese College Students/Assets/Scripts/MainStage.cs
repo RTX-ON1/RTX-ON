@@ -64,7 +64,7 @@ public class MainStage : MonoBehaviour
             {
                 GlobalControl.Instance.IfNextStage = 0;
                 NextStagePanel.SetActive(true);
-                GameObject.Find("FinalExamScoreText").GetComponent<Text>().text = "这次期末考了" + GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage - 1].ToString() + "分";
+                GameObject.Find("FinalExamScoreText").GetComponent<Text>().text = "本学期总成绩为" + GlobalControl.Instance.FinalScore[GlobalControl.Instance.stage - 1].ToString() + "分";
             }
             else if(GlobalControl.Instance.stage == 8)
             {

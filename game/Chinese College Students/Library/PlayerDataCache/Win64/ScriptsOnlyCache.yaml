@@ -50,10 +50,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -918,7 +921,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: f1213de837466f2df3f621da78f1946c
+      Hash: f2abf03bc246523bce4d53bfd53943db
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GlobalControl
@@ -1649,4 +1652,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/VitalCapacity.unity
   - Assets/Scenes/Main_TankWar.unity
   - Assets/Scenes/tankwar.unity
-  playerPath: F:/Chinese College Student/V0.3/Chinese College Students.exe
+  playerPath: F:/Chinese College Student/V0.4/Chinese College Students.exe

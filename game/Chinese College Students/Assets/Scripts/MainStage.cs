@@ -26,6 +26,7 @@ public class MainStage : MonoBehaviour
     public GameObject NextStagePanel;
     public GameObject EndGamePanel;
     public AudioSource EndingBGM;
+    public GameObject EndGameTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -221,6 +222,28 @@ public class MainStage : MonoBehaviour
         else
         {
             EndGamePanel.SetActive(true);
+            int FinalScoresSum = 0;
+            int rnd = Random.Range(0, 6);
+            for (int i = 0; i < 8; i++)
+            {
+                FinalScoresSum += GlobalControl.Instance.FinalScore[i];
+            }
+            if (FinalScoresSum > 580)
+            {
+                EndGameTxt.GetComponent<Text>().text = GlobalControl.Instance.GraduateTxt[1] + "\n" + GlobalControl.Instance.EndingTxt[rnd];
+            }
+            else if (FinalScoresSum > 500)
+            {
+                EndGameTxt.GetComponent<Text>().text = GlobalControl.Instance.GraduateTxt[2] + "\n" + GlobalControl.Instance.EndingTxt[rnd];
+            }
+            else if(FinalScoresSum > 450)
+            {
+                EndGameTxt.GetComponent<Text>().text = GlobalControl.Instance.GraduateTxt[0] + "\n" + GlobalControl.Instance.EndingTxt[rnd];
+            }
+            else
+            {
+                EndGameTxt.GetComponent<Text>().text = GlobalControl.Instance.GraduateTxt[3] + "\n" + GlobalControl.Instance.EndingTxt[rnd];
+            }
         }
     }
 
@@ -236,7 +259,7 @@ public class MainStage : MonoBehaviour
         int i = EventNum/2;
         while (i > 0)
         {
-            int E = Random.Range(0, EventNum - 1);
+            int E = Random.Range(0, EventNum);
             string[] EventItem = Events[E].Split(',');
             if(GlobalControl.Instance.LearningScore > double.Parse(EventItem[1]) && GlobalControl.Instance.LearningScore < double.Parse(EventItem[2])
                 && GlobalControl.Instance.LearnTime > double.Parse(EventItem[3]) && GlobalControl.Instance.LearnTime < double.Parse(EventItem[4])
